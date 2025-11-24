@@ -52,6 +52,8 @@
 ## Requirements
 
 - MikroTik device with **Hotspot** configured.
+- MikroTik running RouterOS v6.xx
+- Mikrotik running RouterOS v7.xx
 ---
 
 ## Installation
@@ -64,10 +66,10 @@
 > Actual raw and live screenshots
 
 - **Login Page**  
-  ![!Login] (https://github.com/hpy-git/myTheme-v3/blob/main/screenshot/Screenshot%202025-11-24%20at%201.43.45%20PM.png?raw=true)
+  ![!screenshot1] (screenshot/login-page.png)
 
 - **Status Page**  
-  ![!Status] (https://github.com/hpy-git/myTheme-v3/blob/main/screenshot/Screenshot%202025-11-24%20at%201.44.03%20PM.png?raw=true)
+  ![!screenshot2] (screenshot/status-page.png)
 
 ## Compatibility
 
@@ -92,5 +94,6 @@
 ## FAQ
 
 - This is an active work and will receive an update from time-to-time. As this captive portal is also the theme that I'm using for my Hotspot Network.
+- Not tested on RouterOS v5.xx and below, if you use this theme on -v5.xx router-os and something is broken, there will be no support for fixes. 
 
 ---
