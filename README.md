@@ -3,7 +3,7 @@
 
 > A modern, responsive, and customizable theme for MikroTik Hotspot captive portals.
 
-[Status
+!Status https://img.shields.io/badge/status-active-brightgreen
 !RouterOS
 !License
 
