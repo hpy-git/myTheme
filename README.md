@@ -65,11 +65,15 @@
 
 > Actual raw and live screenshots
 
-- **Login Page**  
+- **Login Raw Page**  
   ![Login Page](screenshot/login-page.png)
 
-- **Status Page**  
+- **Login Actual Live Page**  
+
+- **Status Raw Page**  
   ![Status Page](screenshot/status-page.png)
+
+  - **Status Actual Live Page**  
 
 ## Compatibility
 
