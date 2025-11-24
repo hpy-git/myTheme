@@ -101,13 +101,13 @@
 
 ## FAQ
 
-*** Is this an Active Project? ***
+**Is this an Active Project?**
 - Yes, This is an active project and will receive an update from time-to-time. As this captive portal is also the theme that I'm using for my Hotspot Network.
 
-*** All routerOS supported? ***
+**All routerOS supported?**
 - This is not tested on RouterOS v5.xx and below, if you use this theme on -v5.xx router-os and something is broken, there will be no support or fixes.
 
-*** Is this free? ***
+**Is this free?**
 - Yes! This project is totally free but I will really appreciate donations especially if my works has been a great tool to help you.
 
 
