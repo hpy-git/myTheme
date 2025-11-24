@@ -58,10 +58,17 @@
 ## Installation
 **Download via Web**
 - Download the zip file.
-  - ![Download]("screenshot/installation/Screenshot 2025-11-24 at 6.43.12 PM.png")
+  - ![Download](screenshot/installation/zip-dl.png)
     - After download, find and extract the .zip file
   - It should look like this:
-    - ![Zip&nbsp;File]('screenshot/installation/Screenshot 2025-11-24 at 6.47.28 PM.png')
+    - ![Zip&nbsp;File](screenshot/installation/zip-extracted.png)
+- Upload to your MikroTik router/device files.
+    - ![Mikrotik&nbsp;Files](screenshot/installation/mtik-files.png)
+- Change your Hotspot HTML directory.
+    - ![Hotspot&nbsp;Directory](screenshot/installation/html-dir.png)
+    - ![Select&nbsp;Portal&nbsp;Directory](screenshot/installation/select-dir.png)
+- Click Apply/Ok
+- You're all set!
 
 ---
 
