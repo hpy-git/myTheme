@@ -47,11 +47,13 @@
 
 > **Note:** Replace MikroTik placeholder variables carefully. Keep RouterOS Hotspot variable syntax intact (e.g., `$(mac)`, `$(ip)`, `$(username)`, etc.).
 
---
+---
+
 ## Requirements
 
 - MikroTik device with **Hotspot** configured.
---
+---
+
 ## Installation
 
 
@@ -74,13 +76,21 @@
 - **Browsers:** Modern browsers (Chrome, Edge, Firefox, Safari, Brave)
 
 ---
+
 ## Troubleshooting
---
+
+---
+
 ## Acknowledgements
---
+
+---
+
 ## Support
---
+
+---
+
 ## FAQ
 
 - This is an active work and will receive an update from time-to-time. As this captive portal is also the theme that I'm using for my Hotspot Network.
---
+
+---
