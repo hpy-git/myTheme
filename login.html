@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/blink.css">
     <link rel="stylesheet" href="css/slider.css">
     <!--<script src="js/javascript.js"></script>-->
+    <script src="js/audio.js"></script>
 
 </head>
 
@@ -269,34 +270,6 @@ function member() {
 
 <!-- background music -->
 <audio id="xmasAudio" src="audio/jbells.mp3" preload="auto" loop autoplay style="display:none"></audio>
-<script>
-// Attempt autoplay; if blocked by browser policy, play on first user interaction.
-(function(){
-  const audio = document.getElementById('xmasAudio');
-  if (!audio) return;
-  audio.volume = 0.25; // subtle background volume
-  const tryPlay = () => {
-    const p = audio.play();
-    if (p && typeof p.catch === 'function') {
-      p.catch(() => {
-        // Autoplay blocked; wait for first interaction then play
-        const resume = () => {
-          audio.play().catch(()=>{});
-          window.removeEventListener('pointerdown', resume, { once: true });
-        };
-        window.addEventListener('pointerdown', resume, { once: true });
-      });
-    }
-  };
-  // Try once on load
-  if (document.readyState === 'complete' || document.readyState === 'interactive') {
-    tryPlay();
-  } else {
-    document.addEventListener('DOMContentLoaded', tryPlay, { once: true });
-  }
-})();
-</script>
-
 </body>
 
 </html>
