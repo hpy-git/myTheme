@@ -107,6 +107,7 @@
 - Special Thanks to MikroTik for a wonderful and very powerful routers!
 - Credits to Mikhmon for the base template!
 - Thanks Google!
+- Thanks Deviantart for high quality images!
 
 ---
 
