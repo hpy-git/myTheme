@@ -29,7 +29,7 @@
 
 **Key goals:**
 - Clean UI for faster login and better status visibility.
-- Easy customization (logo, brand colors, wording).
+- Fully Customized portal (logo, brand colors, wording).
 - Minimal dependencies and optimized assets for low-resource environments.
 
 ---
@@ -80,3 +80,5 @@
 ## Support
 
 ## FAQ
+
+- This is an active work and will receive an update from time-to-time. As this captive portal is also the theme that I'm using for my Hotspot Network.
