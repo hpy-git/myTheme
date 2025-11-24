@@ -75,8 +75,8 @@
 ---
 ## Troubleshooting
 
-## FAQ
-
 ## Acknowledgements
 
 ## Support
+
+## FAQ
