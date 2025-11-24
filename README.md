@@ -84,6 +84,7 @@
 ---
 
 ## Troubleshooting
+- Submit: [Issues](https://github.com/hpy-git/myTheme-v3/issues)
 
 ---
 
