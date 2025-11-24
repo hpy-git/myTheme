@@ -19,7 +19,7 @@
 	<form name="sendin" action="$(link-login-only)" method="post">
 		<input type="hidden" name="username" />
 		<input type="hidden" name="password" />
-		<input type="hidden" name="dst" value="http://10.0.0.1/status" />
+		<input type="hidden" name="dst" value="$(link-status)" />
 		<input type="hidden" name="popup" value="true" />
 	</form>
 	
@@ -103,7 +103,7 @@ $(endif)
 
             <form autocomplete="off" name="login" action="$(link-login-only)" method="post" $(if chap-id) onSubmit="return doLogin()"
                 $(endif)>
-                <input type="hidden" name="dst" value="http://10.0.0.1/status" />
+                <input type="hidden" name="dst" value="$(link-status)" />
                 <input type="hidden" name="popup" value="true" />
                 <input class="username" name="username" type="text" value="$(username)" />
                 <input class="password" name="password" placeholder="Password" type="hidden" />
