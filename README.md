@@ -51,6 +51,8 @@
 - ✅ Optional Terms of Service modal / page  
 - ✅ Simple error handling and variable placeholders (e.g. `$(username)`, `$(host)`)  
 - ✅ Lightweight CSS & JS with caching hints
+- ✅ Background music for different occasions
+- ✅ Well structured file hierarchy for easier management
 
 > **Note:** Replace MikroTik placeholder variables carefully. Keep RouterOS Hotspot variable syntax intact (e.g., `$(mac)`, `$(ip)`, `$(username)`, etc.).
 
@@ -58,7 +60,7 @@
 
 ## Screenshots
 
-> Add your images or animated GIFs here.
+> Actual raw and live screenshots
 
 - **Login Page**  
   ![!Login](https://github.com/hpy-git/myTheme-v3/blob/main/screenshot/Screenshot%202025-11-24%20at%201.43.45%20PM.png?raw=true)
@@ -66,16 +68,15 @@
 - **Status Page**  
   ![!Status](https://github.com/hpy-git/myTheme-v3/blob/main/screenshot/Screenshot%202025-11-24%20at%201.44.03%20PM.png?raw=true)
 
-- Demo: `<hotspot.crazycloudtv.com>`  
-- Video walkthrough: ``
+- Demo: `<http://hotspot.crazycloudtv.com>`  
 
 ---
 
 ## Compatibility
 
-- **RouterOS:** 6.x and 7.x  
-- **Hotspot:** Default HTML directory (`hotspot`) or a custom directory set in Hotspot Profile  
-- **Browsers:** Modern browsers (Chrome, Edge, Firefox, Safari)
+- **RouterOS:** 6.x and 7.x
+- **Hotspot:** Default HTML directory (`hotspot`) or a custom directory set in Hotspot Profile (`myTheme-v3`)
+- **Browsers:** Modern browsers (Chrome, Edge, Firefox, Safari, Brave)
 
 ---
 
