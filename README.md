@@ -51,12 +51,17 @@
 ## Requirements
 
 - MikroTik device with **Hotspot** configured.
-- MikroTik running RouterOS v6.xx
+- MikroTik running RouterOS v6.4x
 - Mikrotik running RouterOS v7.xx
 ---
 
 ## Installation
-
+**Download via Web**
+- Download the zip file.
+  - ![Download](screenshot/installation/Screenshot 2025-11-24 at 6.43.12 PM.png)
+    - After download, find and extract the .zip file
+  - It should look like this:
+    - ![Zip&nbsp;File](screenshot/installation/Screenshot 2025-11-24 at 6.47.28 PM.png)
 
 ---
 
