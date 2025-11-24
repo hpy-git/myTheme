@@ -66,10 +66,10 @@
 > Actual raw and live screenshots
 
 - **Login Page**  
-  ![screenshot1] (screenshot/login-page.png)
+  ![Login Page] (screenshot/login-page.png)
 
 - **Status Page**  
-  ![screenshot2] (screenshot/status-page.png)
+  ![Status Page] (screenshot/status-page.png)
 
 ## Compatibility
 
