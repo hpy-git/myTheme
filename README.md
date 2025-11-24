@@ -16,19 +16,11 @@
 - Live Demo
 - Compatibility
 - Requirements
-- Quick Start
 - Installation
-  - [Method A: Winbox / WebFig (Files)](#method-a-winbox--webfig - Method C: HTML Directory Profile]
-- Customization
-  - Branding & Assets
-  - [Colors, CSS, and Layout](#colors-cssranslations & Legal](#textsap)
 - Troubleshooting
 - FAQ
-- Do’s & Don’ts
-- [SecurityNotes
-- [Versioning & Release Notes](#versioning--- License)
 - Acknowledgments
-- Contact & Support
+- Support
 
 ---
 
@@ -82,4 +74,14 @@
 
 ## Requirements
 
-- MikroTik device with **Hotspot** configured  
+- MikroTik device with **Hotspot** configured.
+
+## Installation
+
+## Troubleshooting
+
+## FAQ
+
+## Acknowledgements
+
+## Support
