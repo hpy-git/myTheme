@@ -84,6 +84,11 @@
   --bg-image: none; /* e.g., url('./your-photo.jpg') */
 }
 
+/* Layout sanity: make widths include padding/border */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 /* Light theme (opt-in via [data-theme="light"]) */
 [data-theme="light"]:root {
   --bg-0: #f6f7fb;
@@ -432,3 +437,53 @@ a:hover .icon { transform: translateY(-1px); }
 .hidden { display: none !important; }
 .muted  { color: var(--text-2) !important; }
 .center { text-align: center !important; }
+
+/* NEW STYLES */
+
+/* Login form wrapper */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);        /* nice, consistent spacing */
+  margin-top: var(--space-2);
+}
+
+/* Make any input inside the form behave consistently */
+.login-form input[type="text"],
+.login-form input[type="password"],
+.login-form input[type="tel"],
+.login-form input[type="number"] {
+  width: 100%;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  background-color: var(--input-bg);
+  border: 1px solid var(--input-border);
+  color: var(--text-0);
+  font-size: var(--fs-300);
+  padding: 0 var(--space-3);
+}
+
+/* Voucher field class (if used) should match username/password */
+.voucher {
+  background-color: var(--input-bg);
+  border: 1px solid var(--input-border);
+  font-size: var(--fs-300);
+  color: var(--text-0);
+  outline: none;
+  width: 100%;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  padding: 0 var(--space-3);
+}
+
+/* Panel constraints */
+.container {
+  max-width: 100%;
+  overflow: hidden;          /* hide accidental overflow (icons, inputs) */
+}
+
+/* Make tables scroll horizontally on small devices so they don't push the panel */
+.container .table, .container table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
