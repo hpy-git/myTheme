@@ -66,12 +66,12 @@
 > Actual raw and live screenshots
 
 - **Login Raw Page**  
-  ![Login Page](screenshot/login-page.png)
+  ![Login Page](screenshot/xmas-theme/login-page.png)
 
 - **Login Actual Live Page**  
 
 - **Status Raw Page**  
-  ![Status Page](screenshot/status-page.png)
+  ![Status Page](screenshot/xmas-theme/status-page.png)
 
   - **Status Actual Live Page**  
 
