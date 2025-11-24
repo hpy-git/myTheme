@@ -3,10 +3,10 @@
 
 > A modern, responsive, and customizable theme for MikroTik Hotspot captive portals.
 
-- ![!Status](https://img.shields.io/badge/status-active-brightgreen)
-- ![!RouterOS](https://img.shields.io/badge/routeros-supported-blue)
-- ![!License](https://img.shields.io/badge/license-MIT-yellow)
-
+- Project: ![!Status](https://img.shields.io/badge/status-active-brightgreen)
+- Device OS: ![!RouterOS](https://img.shields.io/badge/routeros-supported-blue)
+- License: ![!License](https://img.shields.io/badge/license-MIT-yellow)
+- Git: ![!GitHub](https://img.shields.io/badge/github-repo-blue?logo=github)
 ---
 
 ## Table of Contents
@@ -38,7 +38,6 @@
 
 - ✅ Responsive layout for phones, tablets, and laptops  
 - ✅ Works with default Hotspot templates (`login.html`, `status.html`, `logout.html`, etc.)  
-- ✅ Customizable brand colors, fonts, and logos  
 - ✅ Optional Terms of Service modal / page  
 - ✅ Simple error handling and variable placeholders (e.g. `$(username)`, `$(host)`)  
 - ✅ Lightweight CSS & JS with caching hints
