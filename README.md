@@ -85,7 +85,7 @@
 
 ## Troubleshooting
 - Submit all issues and bugs found here: [Issues](https://github.com/hpy-git/myTheme-v3/issues)
-- When submitting an issue report please include the ff:
+- When submitting an issue report please include the following: (required)
     - Details/Description of the issue:
     - Error message (if applicable):
     - Screenshot (important):
