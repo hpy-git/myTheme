@@ -1,5 +1,5 @@
 # myTheme-v3
-MikroTik Christmas Theme v3
+MikroTik Hotspot Theme v3
 
 This is a free MikroTik Hotspot Template called myTheme-v3.
 
