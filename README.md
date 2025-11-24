@@ -67,7 +67,7 @@
 - Change your Hotspot HTML directory.
     - ![!Hotspot_Directory](screenshot/installation/html-dir.png)
     - ![!Select_Portal_Directory](screenshot/installation/select-dir.png)
-- Click Apply/Ok
+- **Click** Select/Apply/Ok
 - You're all set!
 
 ---
