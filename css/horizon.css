@@ -1,0 +1,434 @@
+
+/* =====================================================
+   Minimal Aurora — Complete Redesign (v1.0)
+   -----------------------------------------------------
+   This replaces the previous holiday theme with a modern,
+   high-contrast, accessible dark UI. It keeps your HTML
+   class names but reimagines all variables and declarations.
+   ===================================================== */
+
+/* ===== Optional icon font (kept for compatibility) ===== */
+@font-face {
+  font-family: 'fontello';
+  src: url('./font/fontello.eot');
+  src: url('./font/fontello.eot?#iefix') format('embedded-opentype'),
+       url('./font/fontello.woff') format('woff'),
+       url('./font/fontello.ttf') format('truetype'),
+       url('./font/fontello.svg#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ===== Design Tokens ===== */
+:root {
+  /* Typography */
+  --font-sans: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, "Noto Sans", sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --fs-100: 12px; /* captions */
+  --fs-200: 14px; /* base */
+  --fs-300: 16px; /* inputs/buttons */
+  --fs-400: 18px; /* section headers */
+  --fs-500: 28px; /* brand */
+
+  /* Radius scale */
+  --radius-xs: 8px;
+  --radius-sm: 12px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+
+  /* Spacing scale */
+  --space-1: 6px;
+  --space-2: 10px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
+
+  /* Dark palette (Aurora Indigo/Teal) */
+  --bg-0: #0b0f14;            /* page background */
+  --bg-1: #101826;            /* panels/cards */
+  --bg-2: #0d1621;            /* elevated */
+  --surface-veil: rgba(255,255,255,0.04);
+
+  --primary: #7c3aed;         /* violet */
+  --primary-600: #6d28d9;     /* darker */
+  --primary-700: #5b21b6;     /* pressed */
+
+  --accent: #06b6d4;          /* cyan */
+  --accent-600: #0891b2;
+
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --danger:  #ef4444;
+
+  --text-0: #e6edf3;          /* strong text */
+  --text-1: #c7d2e0;          /* regular */
+  --text-2: #a8b3c1;          /* muted */
+
+  --border-0: #223142;        /* subtle borders */
+  --border-1: #2f4054;        /* stronger */
+
+  --input-bg: #0d1520;        /* inputs */
+  --input-border: #1e2a38;    
+  --focus-ring: #93c5fd;      /* light-blue focus */
+
+  --shadow-1: 0 12px 30px rgba(0,0,0,0.45);
+  --shadow-2: 0 8px 18px rgba(0,0,0,0.35);
+
+  /* Decorative gradients */
+  --gradient-hero: radial-gradient(1200px 600px at 10% -10%, rgba(124,58,237,0.25), transparent 60%),
+                   radial-gradient(900px 500px at 90% 110%, rgba(6,182,212,0.2), transparent 70%),
+                   linear-gradient(180deg, #0b0f14 0%, #0b1119 30%, #0b0f14 100%);
+
+  /* Optional background image hook (set to none by default) */
+  --bg-image: none; /* e.g., url('./your-photo.jpg') */
+}
+
+/* Light theme (opt-in via [data-theme="light"]) */
+[data-theme="light"]:root {
+  --bg-0: #f6f7fb;
+  --bg-1: #ffffff;
+  --bg-2: #f1f5fb;
+  --surface-veil: rgba(0,0,0,0.04);
+
+  --primary: #7c3aed;
+  --primary-600: #6d28d9;
+  --primary-700: #5b21b6;
+
+  --accent: #0ea5e9;
+  --accent-600: #0284c7;
+
+  --text-0: #0f172a;
+  --text-1: #334155;
+  --text-2: #64748b;
+
+  --border-0: #e2e8f0;
+  --border-1: #cbd5e1;
+
+  --input-bg: #ffffff;
+  --input-border: #cbd5e1;
+  --focus-ring: #1d4ed8;
+
+  --gradient-hero: radial-gradient(1200px 600px at 10% -10%, rgba(124,58,237,0.15), transparent 60%),
+                   radial-gradient(900px 500px at 90% 110%, rgba(14,165,233,0.12), transparent 70%),
+                   linear-gradient(180deg, #eef2ff 0%, #ffffff 100%);
+}
+
+/* ===== Base ===== */
+html {
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  font-family: var(--font-sans);
+  font-size: var(--fs-200);
+  line-height: 1.6;
+  margin: 0;
+  color: var(--text-1);
+  background-color: var(--bg-0);
+  background-image: var(--gradient-hero), var(--bg-image);
+  background-attachment: fixed, fixed;
+  background-position: center, center;
+  background-size: cover, cover;
+  color-scheme: dark light; /* improves native form controls */
+}
+
+/* Subtle noise/veil for depth */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(0deg, var(--surface-veil), var(--surface-veil));
+}
+
+/* ===== Layout ===== */
+.main {
+  max-width: 420px;
+  margin: 6% auto;
+  text-align: center;
+  padding: var(--space-3);
+}
+
+.container {
+  background: var(--bg-1);
+  border: 1px solid var(--border-0);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  color: var(--text-1);
+  box-shadow: var(--shadow-1);
+  backdrop-filter: saturate(1.2) blur(8px);
+  animation: card-enter 420ms cubic-bezier(.2,.8,.2,1);
+}
+
+.brand {
+  font-size: var(--fs-500);
+  font-weight: 800;
+  margin: 0 0 var(--space-2);
+  letter-spacing: .4px;
+  text-transform: none;
+  color: var(--text-0);
+  /* Gradient ink effect */
+  background: linear-gradient(90deg, var(--text-0), var(--accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.brand::after {
+  content: "";
+  display: block;
+  height: 2px;
+  margin: var(--space-2) auto 0;
+  width: 72%;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  opacity: .35;
+}
+
+/* ===== Icon base ===== */
+.icon {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  display: inline-block;
+  text-align: center;
+  line-height: 1em;
+  color: inherit;
+  vertical-align: middle;
+  transition: transform .18s ease, color .18s ease;
+}
+
+/* ===== Inputs ===== */
+.username,
+.password {
+  background-color: var(--input-bg);
+  border: 1px solid var(--input-border);
+  font-size: var(--fs-300);
+  color: var(--text-0);
+  outline: none;
+  width: 100%;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  margin-top: var(--space-2);
+  padding: 0 var(--space-3);
+  transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
+}
+
+.username::placeholder,
+.password::placeholder {
+  color: var(--text-2);
+}
+
+.username:focus,
+.password:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--focus-ring) 55%, transparent);
+  background: color-mix(in srgb, var(--input-bg) 85%, var(--primary) 15%);
+}
+
+/* Disabled state */
+.username[disabled],
+.password[disabled] {
+  opacity: .6;
+  cursor: not-allowed;
+}
+
+/* ===== Buttons ===== */
+.button,
+.button2,
+.small-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--text-0);
+  transition: background .18s ease, transform .12s ease, box-shadow .18s ease, filter .18s ease, border-color .18s ease;
+  will-change: transform;
+}
+
+/* Primary */
+.button {
+  background: linear-gradient(180deg, var(--primary) 0%, var(--primary-600) 100%);
+  border-radius: 28px;
+  width: 100%;
+  height: 48px;
+  font-size: var(--fs-300);
+  margin-top: var(--space-3);
+  box-shadow: 0 8px 20px rgba(124,58,237,.35);
+  border-color: color-mix(in srgb, var(--primary) 55%, transparent);
+}
+.button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.06);
+  box-shadow: 0 10px 24px rgba(124,58,237,.45);
+}
+.button:active {
+  transform: scale(.98);
+  background: linear-gradient(180deg, var(--primary-600) 0%, var(--primary-700) 100%);
+}
+
+/* Outline (secondary) */
+.button2 {
+  background: var(--bg-2);
+  border: 1px solid var(--border-1);
+  border-radius: 28px;
+  width: 100%;
+  height: 48px;
+  font-size: var(--fs-300);
+  margin-top: var(--space-2);
+  color: var(--text-0);
+}
+.button2:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 30%, transparent);
+}
+
+/* Small (tertiary) */
+.small-button {
+  background: linear-gradient(180deg, var(--accent) 0%, var(--accent-600) 100%);
+  border-radius: 18px;
+  height: 38px;
+  padding: 0 var(--space-3);
+  color: #07242b; /* high contrast on cyan */
+  box-shadow: 0 6px 14px rgba(6,182,212,.35);
+}
+.small-button:hover {
+  filter: brightness(1.07);
+}
+
+/* Icons inside buttons */
+.button .icon,
+.button2 .icon,
+.small-button .icon {
+  font-size: 1.1em;
+  margin-right: 6px;
+}
+
+/* ===== Notices & Cards ===== */
+.notice {
+  background: color-mix(in srgb, var(--warning) 18%, var(--bg-1) 82%);
+  border-left: 4px solid var(--warning);
+  border-radius: var(--radius-xs);
+  padding: var(--space-2);
+  margin-top: var(--space-2);
+  font-size: var(--fs-200);
+  color: var(--text-0);
+}
+
+/* Wi‑Fi Info Card */
+.wifi-info.card {
+  background: var(--bg-1);
+  border: 1px solid var(--border-0);
+  border-radius: var(--radius-sm);
+  padding: var(--space-3);
+  box-shadow: var(--shadow-2);
+  animation: card-enter 320ms ease;
+}
+.wifi-info .card-title {
+  margin: 0 0 var(--space-1);
+  font-size: var(--fs-400);
+  color: var(--text-0);
+  border-left: 4px solid var(--primary);
+  padding-left: var(--space-2);
+}
+
+/* ===== Table ===== */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: var(--radius-xs);
+  overflow: hidden;
+}
+.table th,
+.table td {
+  padding: 10px 12px;
+  border: 1px solid var(--border-0);
+  color: var(--text-1);
+  background: var(--bg-2);
+}
+.table thead th {
+  background: color-mix(in srgb, var(--bg-2) 70%, var(--primary) 30%);
+  color: var(--text-0);
+}
+.table tr:nth-child(even) td {
+  background: color-mix(in srgb, var(--bg-2) 86%, var(--accent) 14%);
+}
+
+/* ===== Links ===== */
+a {
+  color: var(--primary);
+  text-decoration: none;
+  position: relative;
+  transition: color .18s ease, filter .18s ease;
+}
+a::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: -2px;
+  width: 0%; height: 2px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  transition: width .18s ease;
+  border-radius: 2px;
+}
+a:hover, a:active { color: var(--accent); }
+a:hover::after, a:focus::after { width: 100%; }
+a:visited { color: color-mix(in srgb, var(--primary) 65%, #6b7280 35%); }
+a:focus { outline: 3px solid color-mix(in srgb, var(--focus-ring) 50%, transparent); outline-offset: 2px; }
+a.is-disabled { color: #98a2b3; pointer-events: none; filter: grayscale(10%); }
+a.is-disabled::after { display: none; }
+
+/* Context-aware */
+.container a { color: var(--accent); }
+.container a:hover { color: var(--primary); }
+.notice a { color: var(--danger); font-weight: 600; }
+.notice a:hover { color: var(--warning); }
+.wifi-info.card a {
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.wifi-info.card a:hover { color: var(--accent); }
+.table a:focus { outline: 3px solid color-mix(in srgb, var(--focus-ring) 50%, transparent); outline-offset: 2px; }
+
+/* Inline icon spacing */
+a .icon { margin-right: 6px; transition: transform .18s ease; }
+a:hover .icon { transform: translateY(-1px); }
+
+/* ===== Animations ===== */
+@keyframes card-enter {
+  from { opacity: 0; transform: translateY(8px) scale(.98); }
+  to   { opacity: 1; transform: translateY(0)   scale(1); }
+}
+
+/* ===== Accessibility ===== */
+.button:focus,
+.button2:focus,
+.small-button:focus,
+.username:focus,
+.password:focus {
+  outline: 3px solid color-mix(in srgb, var(--focus-ring) 50%, transparent);
+  outline-offset: 2px;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+  .main { width: 92%; margin-top: 12%; padding: var(--space-2); }
+  .brand { font-size: 24px; }
+  .container { padding: var(--space-3); }
+}
+
+/* ===== Utility row for small buttons ===== */
+.button-row { display: flex; gap: var(--space-2); flex-wrap: wrap; }
+.button-row .small-button { flex: 1 1 auto; min-width: 120px; }
+
+/* ===== Helper classes ===== */
+.hidden { display: none !important; }
+.muted  { color: var(--text-2) !important; }
+.center { text-align: center !important; }
