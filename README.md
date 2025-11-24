@@ -7,6 +7,9 @@
 - Device OS: ![!RouterOS](https://img.shields.io/badge/routeros-supported-blue)
 - License: ![!License](https://img.shields.io/badge/license-MIT-yellow)
 - Git: ![!GitHub](https://img.shields.io/badge/github-repo-blue?logo=github)
+
+> Initial Release Date: November 24, 2025
+
 ---
 
 ## Table of Contents
