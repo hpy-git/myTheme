@@ -18,15 +18,15 @@
 - Requirements
 - Quick Start
 - Installation
-  - [Method A: Winbox / WebFig (Files)](#method-a-winbox--webfig - Method C: HTML Directory Profile
+  - [Method A: Winbox / WebFig (Files)](#method-a-winbox--webfig - Method C: HTML Directory Profile]
 - Customization
   - Branding & Assets
-  - [Colors, CSS, and Layout](#colors-cssranslations & Legal](#textsap
+  - [Colors, CSS, and Layout](#colors-cssranslations & Legal](#textsap)
 - Troubleshooting
 - FAQ
 - Do’s & Don’ts
 - [SecurityNotes
-- [Versioning & Release Notes](#versioning--- License
+- [Versioning & Release Notes](#versioning--- License)
 - Acknowledgments
 - Contact & Support
 
@@ -66,8 +66,8 @@
 - **Status Page**  
   ![Status](./docs/screenshots/status.png](./docs/screenshots> Optional: host a demo preview or GIF.
 
-- Demo: `<https://your-demo-url.example.com>`  
-- Video walkthrough: `<https://your-video-url.example.com>`
+- Demo: `<hotspot.crazycloudtv.com>`  
+- Video walkthrough: ``
 
 ---
 
