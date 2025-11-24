@@ -64,7 +64,7 @@
   ![!Login](https://github.com/hpy-git/myTheme-v3/blob/main/screenshot/Screenshot%202025-11-24%20at%201.43.45%20PM.png?raw=true)
 
 - **Status Page**  
-  ![Status](./docs/screenshots/status.png](./docs/screenshots> Optional: host a demo preview or GIF.
+  ![!Status](https://github.com/hpy-git/myTheme-v3/blob/main/screenshot/Screenshot%202025-11-24%20at%201.44.03%20PM.png?raw=true)
 
 - Demo: `<hotspot.crazycloudtv.com>`  
 - Video walkthrough: ``
