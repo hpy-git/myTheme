@@ -1,7 +1,7 @@
 
 # myTheme-v3 — MikroTik Hotspot Theme
 
-> A modern, responsive, and customizable theme for MikroTik Hotspot captive portals.
+> A modern, responsive, and highly customized theme for MikroTik Hotspot captive portal created by HPY for MikroTik users.
 
 - Project: ![!Status](https://img.shields.io/badge/status-active-brightgreen)
 - Device OS: ![!RouterOS](https://img.shields.io/badge/routeros-supported-blue)
