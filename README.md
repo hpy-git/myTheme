@@ -12,15 +12,14 @@
 ## Table of Contents
 - Overview
 - Features
-- Screenshots
-- Live Demo
-- Compatibility
 - Requirements
 - Installation
+- Screenshots
+- Compatibility
 - Troubleshooting
-- FAQ
 - Acknowledgments
 - Support
+- FAQ
 
 ---
 
@@ -48,6 +47,13 @@
 
 > **Note:** Replace MikroTik placeholder variables carefully. Keep RouterOS Hotspot variable syntax intact (e.g., `$(mac)`, `$(ip)`, `$(username)`, etc.).
 
+## Requirements
+
+- MikroTik device with **Hotspot** configured.
+
+## Installation
+
+
 ---
 
 ## Screenshots
@@ -60,10 +66,6 @@
 - **Status Page**  
   ![!Status](https://github.com/hpy-git/myTheme-v3/blob/main/screenshot/Screenshot%202025-11-24%20at%201.44.03%20PM.png?raw=true)
 
-- Demo: `<http://hotspot.crazycloudtv.com>`  
-
----
-
 ## Compatibility
 
 - **RouterOS:** 6.x and 7.x
@@ -71,13 +73,6 @@
 - **Browsers:** Modern browsers (Chrome, Edge, Firefox, Safari, Brave)
 
 ---
-
-## Requirements
-
-- MikroTik device with **Hotspot** configured.
-
-## Installation
-
 ## Troubleshooting
 
 ## FAQ
