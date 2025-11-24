@@ -108,6 +108,7 @@
 - Credits to Mikhmon for the base template!
 - Thanks Google!
 - Thanks Deviantart for high quality images!
+- Thanks publishers artwork for high quality images!
 
 ---
 
