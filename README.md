@@ -10,7 +10,7 @@
 ---
 
 ## Table of Contents
-- ## Overview -> ## Overview
+- # Overview
 - Features
 - Screenshots
 - Live Demo
