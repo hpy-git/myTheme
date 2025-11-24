@@ -19,7 +19,7 @@
 - Troubleshooting
 - Acknowledgments
 - Support
-- FAQ
+- ### FAQ
 
 ---
 
@@ -89,7 +89,7 @@
 
 ---
 
-## FAQ
+### FAQ
 
 - This is an active work and will receive an update from time-to-time. As this captive portal is also the theme that I'm using for my Hotspot Network.
 
