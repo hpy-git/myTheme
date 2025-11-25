@@ -74,6 +74,8 @@
 - **Click** Select/Apply/Ok
 - You're all set!
 
+**REMINDER** Delete/Remove the `screenshot` folder inside the portal folder if you see one, because it will take too much unnecessary storage.
+
 ---
 
 ## Screenshots
