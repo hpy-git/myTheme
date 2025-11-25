@@ -213,8 +213,17 @@ $(endif)
         </div>   
         </div>
         </div>
-        
+
 <audio src="audio/sfx/tsfx.mp3"></audio>
+<script>
+  const sound = document.getElementById('clickSound');
+  document.querySelectorAll('button, a').forEach(el => {
+    el.addEventListener('click', () => {
+      sound.currentTime = 0; // Reset to start
+      sound.play();
+    });
+  });
+</script>
 
 <script type="text/javascript">
 
@@ -296,17 +305,6 @@ function member() {
     document.addEventListener('DOMContentLoaded', tryPlay, { once: true });
   }
 })();
-</script>
-
-
-<script>
-  const sound = document.getElementById('clickSound');
-  document.querySelectorAll('button, a').forEach(el => {
-    el.addEventListener('click', () => {
-      sound.currentTime = 0; // Reset to start
-      sound.play();
-    });
-  });
 </script>
 </body>
 
