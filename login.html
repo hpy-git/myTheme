@@ -13,6 +13,7 @@
 </head>
 
 <body>
+  <audio src="audio/sfx/tsfx.mp3"></audio>
   <div class="bg">
     
         $(if chap-id)
@@ -298,6 +299,16 @@ function member() {
 })();
 </script>
 
+
+<script>
+  const sound = document.getElementById('clickSound');
+  document.querySelectorAll('button, a').forEach(el => {
+    el.addEventListener('click', () => {
+      sound.currentTime = 0; // Reset to start
+      sound.play();
+    });
+  });
+</script>
 </body>
 
 </html>
