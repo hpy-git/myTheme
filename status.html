@@ -89,35 +89,46 @@ $(endif)
         
 </script>
 
-<!-- background music -->
-<audio id="xmasAudio" src="audio/ps5.mp3" preload="auto" loop autoplay style="display:none"></audio>
-<script>
-// Attempt autoplay; if blocked by browser policy, play on first user interaction.
-(function(){
-  const audio = document.getElementById('xmasAudio');
-  if (!audio) return;
-  audio.volume = 0.25; // subtle background volume
-  const tryPlay = () => {
-    const p = audio.play();
-    if (p && typeof p.catch === 'function') {
-      p.catch(() => {
-        // Autoplay blocked; wait for first interaction then play
-        const resume = () => {
-          audio.play().catch(()=>{});
-          window.removeEventListener('pointerdown', resume, { once: true });
-        };
-        window.addEventListener('pointerdown', resume, { once: true });
-      });
-    }
-  };
-  // Try once on load
-  if (document.readyState === 'complete' || document.readyState === 'interactive') {
-    tryPlay();
-  } else {
-    document.addEventListener('DOMContentLoaded', tryPlay, { once: true });
-  }
-})();
-</script>
+<!-- Audio Files-->
+<audio id="clickSound" src="audio/sfx/pop-reverb-423718.mp3" preload="auto"></audio>
+<audio id="bgAudio" src="audio/bgm/pogi-comp.mp3" preload="auto" loop autoplay style="display:none"></audio>
 
+<script type="text/javascript" >
+  // ----- Click sound handler -----
+  const clickSound = document.getElementById('clickSound');
+  document.querySelectorAll('button, a').forEach(el => {
+    el.addEventListener('click', () => {
+      if (clickSound) {
+        clickSound.currentTime = 0; // Reset to start
+        clickSound.play().catch(()=>{}); // Catch autoplay issues
+      }
+    });
+  });
+
+  // ----- Background music handler -----
+  const bgAudio = document.getElementById('bgAudio');
+  if (bgAudio) {
+    bgAudio.volume = 0.25; // subtle background volume
+    const tryPlayBG = () => {
+      const p = bgAudio.play();
+      if (p && typeof p.catch === 'function') {
+        p.catch(() => {
+          // Autoplay blocked, play on first user interaction
+          const resume = () => {
+            bgAudio.play().catch(()=>{});
+            window.removeEventListener('pointerdown', resume, { once: true });
+          };
+          window.addEventListener('pointerdown', resume, { once: true });
+        });
+      }
+    };
+
+    if (document.readyState === 'complete' || document.readyState === 'interactive') {
+      tryPlayBG();
+    } else {
+      document.addEventListener('DOMContentLoaded', tryPlayBG, { once: true });
+    }
+  }
+</script>
 </body>
 </html>
