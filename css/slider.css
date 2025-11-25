@@ -110,3 +110,26 @@
 #radio5:checked ~ .navigation-auto .auto-btn5{
 	background: #0967F9
 }
+
+#radio6:checked ~ .navigation-auto .auto-btn6{
+	background: #0967F9
+}
+#radio7:checked ~ .navigation-auto .auto-btn7{
+	background: #0967F9
+}
+#radio8:checked ~ .navigation-auto .auto-btn8{
+	background: #0967F9
+}
+#radio9:checked ~ .navigation-auto .auto-btn9{
+	background: #0967F9
+}
+#radio10:checked ~ .navigation-auto .auto-btn10{
+	background: #0967F9
+}
+#radio11:checked ~ .navigation-auto .auto-btn11{
+	background: #0967F9
+}
+#radio12:checked ~ .navigation-auto .auto-btn12{
+	background: #0967F9
+}
+
