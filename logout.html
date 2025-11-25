@@ -53,6 +53,46 @@ $(endif)
         titleElement.innerHTML = "$(hostname) &gt; logout";
     }
 </script>
+<!-- Audio Files-->
+<audio id="clickSound" src="audio/sfx/pop-reverb-423718.mp3" preload="auto" style="display: none;"></audio>
+<audio id="bgAudio" src="audio/bgm/ps5.mp3" preload="auto" loop autoplay style="display:none"></audio>
 
+<script type="text/javascript" >
+  // ----- Click sound handler -----
+  const clickSound = document.getElementById('clickSound');
+  document.querySelectorAll('button, a').forEach(el => {
+    el.addEventListener('click', () => {
+      if (clickSound) {
+        clickSound.currentTime = 0; // Reset to start
+        clickSound.play().catch(()=>{}); // Catch autoplay issues
+      }
+    });
+  });
+
+  // ----- Background music handler -----
+  const bgAudio = document.getElementById('bgAudio');
+  if (bgAudio) {
+    bgAudio.volume = 0.25; // subtle background volume
+    const tryPlayBG = () => {
+      const p = bgAudio.play();
+      if (p && typeof p.catch === 'function') {
+        p.catch(() => {
+          // Autoplay blocked, play on first user interaction
+          const resume = () => {
+            bgAudio.play().catch(()=>{});
+            window.removeEventListener('pointerdown', resume, { once: true });
+          };
+          window.addEventListener('pointerdown', resume, { once: true });
+        });
+      }
+    };
+
+    if (document.readyState === 'complete' || document.readyState === 'interactive') {
+      tryPlayBG();
+    } else {
+      document.addEventListener('DOMContentLoaded', tryPlayBG, { once: true });
+    }
+  }
+</script>
 </body>
 </html>
