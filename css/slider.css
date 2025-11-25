@@ -57,17 +57,17 @@
 
 
 #radio1:checked ~ .first { margin-left: 0; }
-#radio2:checked ~ .first { margin-left: -100%; }
-#radio3:checked ~ .first { margin-left: -200%; }
-#radio4:checked ~ .first { margin-left: -300%; }
-#radio5:checked ~ .first { margin-left: -400%; }
-#radio6:checked ~ .first { margin-left: -500%; }
-#radio7:checked ~ .first { margin-left: -600%; }
-#radio8:checked ~ .first { margin-left: -700%; }
-#radio9:checked ~ .first { margin-left: -800%; }
-#radio10:checked ~ .first { margin-left: -900%; }
-#radio11:checked ~ .first { margin-left: -1000%; }
-#radio12:checked ~ .first { margin-left: -1100%; }
+#radio2:checked ~ .first { margin-left: -10%; }
+#radio3:checked ~ .first { margin-left: -20%; }
+#radio4:checked ~ .first { margin-left: -30%; }
+#radio5:checked ~ .first { margin-left: -40%; }
+#radio6:checked ~ .first { margin-left: -50%; }
+#radio7:checked ~ .first { margin-left: -60%; }
+#radio8:checked ~ .first { margin-left: -70%; }
+#radio9:checked ~ .first { margin-left: -80%; }
+#radio10:checked ~ .first { margin-left: -90%; }
+#radio11:checked ~ .first { margin-left: -100%; }
+#radio12:checked ~ .first { margin-left: -110%; }
 
 /*css for automatic navigation*/
 .navigation-auto{
