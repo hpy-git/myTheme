@@ -219,15 +219,20 @@ $(endif)
 
 <script type="text/javascript" >
   // ----- Click sound handler -----
-  const clickSound = document.getElementById('clickSound');
+   const clickSound = document.getElementById('clickSound');
+  if (clickSound) {
+      clickSound.volume = 0.3; // Set volume (0.0–1.0)
+  }
+
   document.querySelectorAll('button, a').forEach(el => {
     el.addEventListener('click', () => {
       if (clickSound) {
-        clickSound.currentTime = 0; // Reset to start
-        clickSound.play().catch(()=>{}); // Catch autoplay issues
+        clickSound.currentTime = 0;
+        clickSound.play().catch(()=>{});
       }
     });
   });
+  
 
   // ----- Background music handler -----
   const bgAudio = document.getElementById('bgAudio');
