@@ -3,10 +3,7 @@
 
 > A modern, responsive, and highly customized theme for MikroTik Hotspot captive portal created by HPY for MikroTik users.
 
-- Project: ![!Status](https://img.shields.io/badge/status-active-brightgreen)
-- Device OS: ![!RouterOS](https://img.shields.io/badge/routeros-supported-blue)
-- License: ![!License](https://img.shields.io/badge/license-MIT-yellow)
-- Git: ![!GitHub](https://img.shields.io/badge/github-repo-blue?logo=github)
+![!Status](https://img.shields.io/badge/status-active-brightgreen) | ![!RouterOS](https://img.shields.io/badge/routeros-supported-blue) | ![!License](https://img.shields.io/badge/license-MIT-yellow) | ![!GitHub](https://img.shields.io/badge/github-repo-blue?logo=github)
 
 > Initial Release Date: November 24, 2025
 
