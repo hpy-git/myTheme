@@ -5,23 +5,23 @@ var cloud = {
         }
         //WIFI NAME HERE
         var wifiName = {
-          textEdit:"Guest Hotspot",
+          textEdit:"YOUR WIFI NAME HERE",
         }
         //RUNNING BANNER TEXT HERE
         var runningText = {
-          textEdit:"Welcome to Cloud Hotspot Portal.",
+          textEdit:"MOVING TEXT ANNOUNCEMENT",
         }
         //INFO TEXT HERE
         var infoText = {
-          textEdit:"Trouble logging in using your access? Contact me @ 09626606116.",
+          textEdit:"INFORMATION TEXT HERE.",
         }
         //COPYRIGHT TEXT HERE
         var copyrightText = {
-          textEdit:"Copyright &copy; 2023. All rights reserved.",
+          textEdit:"COPRIGHT 2025 YOUR COMPANY.",
         }
         //POWERED BY TEXT HERE
         var pwrText = {
-          textEdit:"A Crazy Cloud Networks Subsidiary.",
+          textEdit:"POWERED BY YOUR COMPANY.",
         }
 
         var a = cloud.varName.call(wifiName); 
