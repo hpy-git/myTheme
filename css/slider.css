@@ -38,13 +38,6 @@
 .slide:nth-child(3){ animation-delay: 4s; }
 .slide:nth-child(4){ animation-delay: 6s; }
 .slide:nth-child(5){ animation-delay: 8s; }
-.slide:nth-child(6){ animation-delay: 10s; }
-.slide:nth-child(7){ animation-delay: 12s; }
-.slide:nth-child(8){ animation-delay: 14s; }
-.slide:nth-child(9){ animation-delay: 16s; }
-.slide:nth-child(10){ animation-delay: 18s; }
-.slide:nth-child(11){ animation-delay: 20s; }
-.slide:nth-child(12){ animation-delay: 22s; }
 
 /* Keyframes: 0-20% fade in, 20-40% visible, 40-60% fade out, rest invisible */
 @keyframes fade{
@@ -61,13 +54,6 @@
 #radio3:checked ~ .first { margin-left: -20%; }
 #radio4:checked ~ .first { margin-left: -30%; }
 #radio5:checked ~ .first { margin-left: -40%; }
-#radio6:checked ~ .first { margin-left: -50%; }
-#radio7:checked ~ .first { margin-left: -60%; }
-#radio8:checked ~ .first { margin-left: -70%; }
-#radio9:checked ~ .first { margin-left: -80%; }
-#radio10:checked ~ .first { margin-left: -90%; }
-#radio11:checked ~ .first { margin-left: -100%; }
-#radio12:checked ~ .first { margin-left: -110%; }
 
 /*css for automatic navigation*/
 .navigation-auto{
@@ -108,28 +94,6 @@
 }
 
 #radio5:checked ~ .navigation-auto .auto-btn5{
-	background: #0967F9
-}
-
-#radio6:checked ~ .navigation-auto .auto-btn6{
-	background: #0967F9
-}
-#radio7:checked ~ .navigation-auto .auto-btn7{
-	background: #0967F9
-}
-#radio8:checked ~ .navigation-auto .auto-btn8{
-	background: #0967F9
-}
-#radio9:checked ~ .navigation-auto .auto-btn9{
-	background: #0967F9
-}
-#radio10:checked ~ .navigation-auto .auto-btn10{
-	background: #0967F9
-}
-#radio11:checked ~ .navigation-auto .auto-btn11{
-	background: #0967F9
-}
-#radio12:checked ~ .navigation-auto .auto-btn12{
 	background: #0967F9
 }
 
