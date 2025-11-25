@@ -46,6 +46,7 @@
 - ✅ Lightweight CSS & JS with caching hints
 - ✅ Background music for different occasions
 - ✅ Well structured file hierarchy for easier management
+- ✅ Known games photo slides
 
 > **Note:** Replace MikroTik placeholder variables carefully. Keep RouterOS Hotspot variable syntax intact (e.g., `$(mac)`, `$(ip)`, `$(username)`, etc.).
 
