@@ -83,12 +83,12 @@
 > Actual raw and live screenshots
 
 - **Login Raw Page**  
-  ![Login Page](screenshot/xmas-theme/login-page.png)
+  ![Login Page](hpy-git/myTheme/screenshot/horizon/horizon_login.png)
 
 - **Login Actual Live Page**  
 
 - **Status Raw Page**  
-  ![Status Page](screenshot/xmas-theme/status-page.png)
+  ![Status Page](hpy-git/myTheme/screenshot/horizon/horizon_status.png)
 
   - **Status Actual Live Page**  
 
