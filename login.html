@@ -110,7 +110,7 @@ $(endif)
                 $(endif)>
                 <input type="hidden" name="dst" value="$(link-status)" />
                 <input type="hidden" name="popup" value="true" />
-                <input class="username" name="username" type="text" value="$(username)" type="hidden"/>
+                <input class="username" name="username" type="text" value="$(username)"/>
                 <input class="password" name="password" placeholder="Password" type="hidden" />
                 $(if error)<div class="notice">$(error)</div>$(endif)
                 <button class="button" type="submit"><i class="icon icon-login">&#xe803;</i>  Connect</button>
@@ -284,6 +284,7 @@ var username = document.login.username;
 var password = document.login.password;
 
 username.placeholder = "Voucher Code";
+username.type = "hidden";
 
 // set password = username
 function setpass() {
