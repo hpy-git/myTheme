@@ -108,33 +108,17 @@
 
 /* Light theme (opt-in via .theme-light) */
 .theme-light:root {
-  --bg-0: #f6f7fb;
-  --bg-1: #ffffff;
-  --bg-2: #f1f5fb;
-  --surface-veil: rgba(0,0,0,0.04);
-
-  --primary: #7c3aed;
-  --primary-600: #6d28d9;
-  --primary-700: #5b21b6;
-
-  --accent: #0ea5e9;
-  --accent-600: #0284c7;
-
-  --text-0: #0f172a;
-  --text-1: #334155;
-  --text-2: #64748b;
-
-  --border-0: #e2e8f0;
-  --border-1: #cbd5e1;
-
-  --input-bg: #ffffff;
-  --input-border: #cbd5e1;
-  --focus-ring: #1d4ed8;
-
-  --gradient-hero: radial-gradient(1200px 600px at 10% -10%, rgba(124,58,237,0.15), transparent 60%),
-                   radial-gradient(900px 500px at 90% 110%, rgba(14,165,233,0.12), transparent 70%),
-                   linear-gradient(180deg, #eef2ff 0%, #ffffff 100%);
+  --bg-0: #ffffff;
+  --bg-1: #f8f9fa;
+  --text-0: #000000;
+  --text-1: #333333;
+  --text-2: #666666;
+  --primary: #0066cc;
+  --accent: #6600cc;
+  --glass-light: rgba(0,0,0,0.08);
+  --surface-veil: rgba(0,0,0,0.05);
 }
+                  }
 
 /* ===== Base ===== */
 html {
@@ -806,4 +790,34 @@ a:hover .icon {
   display: block;
   width: 100%;
   overflow-x: auto;
+}
+
+/* ===== NEW: Reduce Glass Blur (More Transparent) =====
+   Apply .glass-subtle to an ancestor (html/body/container wrapper)
+   to make glass effects less frosted and more transparent. */
+.glass-subtle {
+  --blur-value: blur(8px); /* smaller blur = more transparent */
+}
+
+/* When an ancestor has .glass-subtle, reduce blur on main glass elements */
+.glass-subtle .container,
+.glass-subtle .wifi-info.card,
+.glass-subtle .login-form,
+.glass-subtle .username,
+.glass-subtle .password,
+.glass-subtle .button,
+.glass-subtle .button2,
+.glass-subtle .small-button {
+  backdrop-filter: var(--blur-value) saturate(100%);
+  -webkit-backdrop-filter: var(--blur-value) saturate(100%);
+}
+
+/* Optional: slightly reduce inner inset glows and shadow intensity */
+.glass-subtle .container {
+  box-shadow: 
+    var(--shadow-2),
+    inset 0 0 20px rgba(255,255,255,0.12);
+}
+.glass-subtle .wifi-info.card {
+  box-shadow: var(--shadow-2), inset 0 1px 0 rgba(255,255,255,0.18);
 }
