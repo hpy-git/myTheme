@@ -422,6 +422,13 @@ a:focus::after {
 .rounded-lg { border-radius: var(--radius-4); }
 .rounded-full { border-radius: 9999px; }
 
+/* Applying glass theme styles */
+.glass {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+}
+
 /* Responsive */
 @media (max-width: 640px) {
   body { font-size: var(--text-sm); }
