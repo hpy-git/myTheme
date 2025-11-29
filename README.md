@@ -383,6 +383,7 @@ myTheme/
 ### Glass Morphism in Action
 
 **Login Page with Glass Effects:**
+
 ![!Login_Page](screenshot/liquid-glass/glass-login.png)
 
 - Glass form container with 25px blur
@@ -391,6 +392,7 @@ myTheme/
 - Image slider with smooth transitions
 
 **Status Page:**
+
 ![!Status_Page](screenshot/liquid-glass/glass-status.png)
 
 - Glass welcome header
