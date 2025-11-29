@@ -77,25 +77,7 @@ $(endif)
             </div>
           </div>
         </div>
-        <div class="info-rates-container container" style="width:100%; max-width:500px; margin:0 auto;">
-        <!-- Network Details Panel -->
-          <div id="wifiInfoPanel" class="wifi-info card" style="margin-top:12px;">
-            <h3 class="card-title">Device Details</h3>
-            <!-- User Connection Info -->
-            <div class="network-info-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px;">
-              <!-- User IP Address -->
-              <div class="info-card" style="background: rgba(91,124,250,0.1); border: 1px solid rgba(91,124,250,0.3); border-radius: 8px; padding: 12px; text-align: center;">
-                <div style="font-size: 11px; color: var(--text-2); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; font-weight: 700;">IP Address</div>
-                <div id="userIp" style="font-size: 14px; font-weight: 700; color: var(--primary); word-break: break-all;">$(ip)</div>
-              </div>
-              <!-- User MAC Address -->
-              <div class="info-card" style="background: rgba(139,92,246,0.1); border: 1px solid rgba(139,92,246,0.3); border-radius: 8px; padding: 12px; text-align: center;">
-                <div style="font-size: 11px; color: var(--text-2); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; font-weight: 700;">MAC Address</div>
-                <div id="userMac" style="font-size: 14px; font-weight: 700; color: var(--accent); word-break: break-all;">$(mac)</div>
-              </div>
-            </div>
-              </div>
-        </div>
+        
           <!-- Old Login Method Buttons -->
         <div class="button-row container" style="width:100%; max-width:400px; margin:0 auto;">
           <button id="btnvrc" class="button2" onclick="voucher();"><i class="icon icon-ticket">&#xe802;</i>&nbsp;Voucher</button>
@@ -180,8 +162,27 @@ $(endif)
             <a href="$(link-login)" style="color: var(--primary); font-weight: 700;">Refresh Login Page</a>
           </div>
         </div>
-        
-        
+
+        <!-- Device Details Panel -->
+        <div class="info-rates-container container" style="width:100%; max-width:500px; margin:0 auto;">
+          <div id="wifiInfoPanel" class="wifi-info card" style="margin-top:12px;">
+            <h3 class="card-title">Device Details</h3>
+            <!-- User Connection Info -->
+            <div class="network-info-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px;">
+              <!-- User IP Address -->
+              <div class="info-card" style="background: rgba(91,124,250,0.1); border: 1px solid rgba(91,124,250,0.3); border-radius: 8px; padding: 12px; text-align: center;">
+                <div style="font-size: 11px; color: var(--text-2); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; font-weight: 700;">IP Address</div>
+                <div id="userIp" style="font-size: 14px; font-weight: 700; color: var(--primary); word-break: break-all;">$(ip)</div>
+              </div>
+              <!-- User MAC Address -->
+              <div class="info-card" style="background: rgba(139,92,246,0.1); border: 1px solid rgba(139,92,246,0.3); border-radius: 8px; padding: 12px; text-align: center;">
+                <div style="font-size: 11px; color: var(--text-2); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; font-weight: 700;">MAC Address</div>
+                <div id="userMac" style="font-size: 14px; font-weight: 700; color: var(--accent); word-break: break-all;">$(mac)</div>
+              </div>
+            </div>
+              </div>
+        </div>
+
         <!-- Footer -->
         <div class="footer-container box" style="width:100%; max-width:400px; margin:24px auto 0 auto; text-align:center; color: var(--text-1);">
           <a href="$(link-login)" target="_parent" style="color: var(--primary); font-weight: 700;">Cloud Hotspot Portal</a><br/>
