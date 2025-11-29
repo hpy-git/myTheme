@@ -156,6 +156,16 @@ $(endif)</span>
             <a href="$(link-login)">Refresh Login Page</a>
           </div>
         </div>
+        <!-- Login Method Dropdown -->
+          <div style="margin-top: 16px;">
+            <label for="loginMethodSelect" style="display: block; font-size: 12px; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; font-weight: 600;">Select Login Method</label>
+            <select id="loginMethodSelect" style="width: 100%; height: 48px; padding: 0 16px; border-radius: 14px; border: 1.2px solid rgba(255,255,255,0.7); background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.88) 100%); color: #1a2a4a; font-size: 15px; font-weight: 600; cursor: pointer; backdrop-filter: blur(10px); box-shadow: inset 0 2px 8px rgba(255,255,255,0.6), inset 0 -1px 3px rgba(0,0,0,0.05), 0 4px 12px rgba(0,0,0,0.08); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);" onchange="handleLoginMethodChange(this.value)">
+              <option value="" style="align-content: center;">-- Choose a Method --</option>
+              <option value="voucher">🎫 Voucher</option>
+              <option value="member">👤 Member Account</option>
+              <option value="qr">📱 Scan QR Code</option>
+            </select>
+          </div>
 
         <!-- Login Form Container -->
         <div class="login-container container" style="width:100%; max-width:400px; margin:0 auto;">
@@ -168,16 +178,7 @@ $(endif)</span>
             $(if error)<div class="notice">$(error)</div>$(endif)
             <button class="button" type="submit"><i class="icon icon-login">&#xe803;</i>  Connect</button>
           </form>
-          <!-- Login Method Dropdown -->
-          <div style="margin-top: 16px;">
-            <label for="loginMethodSelect" style="display: block; font-size: 12px; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; font-weight: 600;">Select Login Method</label>
-            <select id="loginMethodSelect" style="width: 100%; height: 48px; padding: 0 16px; border-radius: 14px; border: 1.2px solid rgba(255,255,255,0.7); background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.88) 100%); color: #1a2a4a; font-size: 15px; font-weight: 600; cursor: pointer; backdrop-filter: blur(10px); box-shadow: inset 0 2px 8px rgba(255,255,255,0.6), inset 0 -1px 3px rgba(0,0,0,0.05), 0 4px 12px rgba(0,0,0,0.08); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);" onchange="handleLoginMethodChange(this.value)">
-              <option value="">-- Choose a Method --</option>
-              <option value="voucher">🎫 Voucher</option>
-              <option value="member">👤 Member Account</option>
-              <option value="qr">📱 Scan QR Code</option>
-            </select>
-          </div>
+          
           $(if trial == 'yes')
           <div class="box" style="margin-top:16px;"><a style="text-decoration: none" href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Click here for 15 minutes Free Trial&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></div>
           $(endif)
