@@ -1418,7 +1418,7 @@ select option:checked,
   width: 100%;
   height: 100%;
   background-image: 
-    linear-gradient(135deg, rgba(15,23,42,0.8) 0%, rgba(30,41,59,0.75) 50%, rgba(15,23,42,0.8) 100%),
+    /*linear-gradient(135deg, rgba(15,23,42,0.8) 0%, rgba(30,41,59,0.75) 50%, rgba(15,23,42,0.8) 100%),*/
     url('../img/lg/Snowy-mountain-scene-iOS-26-Depth-Effect-wallpaper.png');
   background-size: cover, cover;
   background-position: center, center;
