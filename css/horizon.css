@@ -237,7 +237,7 @@ body::after {
                     var(--liquid-layer-3),
                     var(--liquid-overlay);
   background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, repeat;
-  background-position: center, 5% 10%, 95% 90%, 50% 50%, 0 0;
+  background-position: center; /* , 5% 10%, 95% 90%, 50% 50%, 0 0 */
   background-size: cover, 1200px 700px, 1400px 800px, 1800px 1000px, cover;
   mix-blend-mode: screen;
   filter: blur(18px) saturate(120%);
