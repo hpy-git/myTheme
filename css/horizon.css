@@ -99,12 +99,7 @@
 *, *::before, *::after {
   box-sizing: border-box;
 }
-.theme-dark {
-  --bg-0: #000000;
-  --bg-1: #0d0d0d;
-  --glass-light: rgba(255,255,255,0.15);
-  --surface-veil: rgba(255,255,255,0.12);
-}
+
 /* Light theme (opt-in via [data-theme="light"]) */
 [data-theme="light"]:root {
   --bg-0: #f6f7fb;
