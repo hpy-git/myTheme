@@ -10,7 +10,7 @@
     <title id="title"></title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	  <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <!-- Applying styles for MacOS Tahoe concept -->
 <link rel="stylesheet" href="css/horizon.css">
@@ -40,24 +40,24 @@
   <div class="bg">
     
         $(if chap-id)
-	<form name="sendin" action="$(link-login-only)" method="post">
-		<input type="hidden" name="username" />
-		<input type="hidden" name="password" />
-		<input type="hidden" name="dst" value="$(link-status)" />
-		<input type="hidden" name="popup" value="true" />
-	</form>
-	
-	<script type="text/javascript" src="md5.js"></script>
-	<script type="text/javascript">
-	
-	    function doLogin() {
-		document.sendin.username.value = document.login.username.value;
-		document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
-		document.sendin.submit();
-		return false;
-	    }
-	
-	</script>
+  <form name="sendin" action="$(link-login-only)" method="post">
+    <input type="hidden" name="username" />
+    <input type="hidden" name="password" />
+    <input type="hidden" name="dst" value="$(link-status)" />
+    <input type="hidden" name="popup" value="true" />
+  </form>
+  
+  <script type="text/javascript" src="md5.js"></script>
+  <script type="text/javascript">
+  
+      function doLogin() {
+    document.sendin.username.value = document.login.username.value;
+    document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
+    document.sendin.submit();
+    return false;
+      }
+  
+  </script>
 $(endif)
             
 
@@ -85,7 +85,7 @@ $(endif)
       <!--<button id="qr" class="small-button" onclick="window.location='https://laksa19.github.io/myqr';"> <i class="icon icon-qrcode">&#xe801;</i>&nbsp;Scan QR</button>-->
         </div>
         <!-- Login Form Container -->
-        <div class="login-container container glass-subtle" id="loginFormContainer" style="width:100%; max-width:400px; margin:0 auto;">
+        <div class="login-container" id="loginFormContainer" style="width:100%; max-width:500px; margin:0 auto;">
           <div class="blinking" id="infologin" style="text-align: center;"></div>
           <form autocomplete="off" name="login" action="$(link-login-only)" method="post" $(if chap-id) onSubmit="return doLogin()" $(endif) class="login-form">
             <input type="hidden" name="dst" value="$(link-status)" />
@@ -96,8 +96,9 @@ $(endif)
             <button class="button glass-subtle" type="submit"><i class="icon icon-login">&#xe803;</i>  Connect</button>
           </form>
           
+          <div class="login-container" style="width:100%; max-width:500px; margin:0 auto;">
           $(if trial == 'yes')
-          <div class="box" style="margin-top:16px;"><a style="text-decoration: none" href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Click here for 15 minutes Free Trial&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></div>
+          <a style="text-decoration: none" href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)"><button class="button">Free 1 Hour Wifi</button></a>
           $(endif)
         </div>
 
