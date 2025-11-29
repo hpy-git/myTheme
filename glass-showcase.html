@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>macOS Tahoe Liquid Glass Theme - Component Showcase</title>
+    <link rel="stylesheet" href="css/horizon.css">
+    <style>
+        /* Extended showcase styles */
+        body {
+            background: linear-gradient(135deg, #0a1427 0%, #1a2a4a 50%, #0a1427 100%);
+        }
+
+        .showcase-section {
+            max-width: 500px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .section-title {
+            color: #e6edf3;
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .component-group {
+            background: linear-gradient(135deg, rgba(255,255,255,0.32), rgba(255,255,255,0.15));
+            border: 1.5px solid rgba(255,255,255,0.5);
+            border-radius: 20px;
+            padding: 24px;
+            margin-bottom: 20px;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+        }
+
+        .component-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #5b7cfa;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+        }
+
+        .demo-row {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+
+        .input-demo {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .glass-demo-text {
+            color: #334155;
+            font-size: 13px;
+            margin-top: 8px;
+            line-height: 1.4;
+        }
+
+        .badge-demo {
+            display: inline-block;
+            background: rgba(91, 124, 250, 0.2);
+            border: 1px solid rgba(91, 124, 250, 0.4);
+            color: #5b7cfa;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .feature-list li {
+            color: #c7d2e0;
+            padding: 8px 0;
+            font-size: 13px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+
+        .feature-list li::before {
+            content: "✓ ";
+            color: #10b981;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        .color-palette {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-top: 12px;
+        }
+
+        .color-swatch {
+            border-radius: 12px;
+            padding: 16px;
+            color: white;
+            font-size: 12px;
+            font-weight: 600;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .color-blue {
+            background: linear-gradient(135deg, #5b7cfa, #4c5fa8);
+        }
+
+        .color-purple {
+            background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+        }
+
+        .color-success {
+            background: linear-gradient(135deg, #10b981, #059669);
+        }
+
+        .color-warning {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+        }
+
+        /* Glass effect indicator */
+        .glass-effect-indicator {
+            font-size: 11px;
+            color: #94a3b8;
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-style: italic;
+        }
+
+        .footer {
+            text-align: center;
+            color: #94a3b8;
+            font-size: 12px;
+            margin-top: 40px;
+            padding: 20px;
+        }
+
+        .footer a {
+            color: #5b7cfa;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            color: #8b5cf6;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <!-- Header -->
+        <div class="showcase-section">
+            <h1 class="section-title">🌊 Tahoe Liquid Glass</h1>
+            <p style="text-align: center; color: #c7d2e0; font-size: 14px; margin-top: -10px;">
+                Modern glassmorphism design inspired by Apple's macOS Tahoe
+            </p>
+        </div>
+
+        <!-- Buttons Showcase -->
+        <div class="showcase-section">
+            <div class="component-group">
+                <div class="component-title">Primary Buttons</div>
+                <button class="button">Sign In</button>
+                <p class="glass-demo-text">Main action button with blue gradient and glass effect</p>
+                
+                <div style="margin-top: 16px;">
+                    <div class="component-title" style="margin-bottom: 8px;">Secondary Buttons</div>
+                    <button class="button2">More Options</button>
+                    <p class="glass-demo-text">Outlined glass button for secondary actions</p>
+                </div>
+
+                <div style="margin-top: 16px;">
+                    <div class="demo-row">
+                        <button class="small-button">Help</button>
+                        <button class="small-button">Settings</button>
+                        <button class="small-button">Info</button>
+                    </div>
+                    <p class="glass-demo-text">Small purple buttons for compact layouts</p>
+                </div>
+
+                <div class="glass-effect-indicator">
+                    ✨ All buttons feature smooth hover lift and glowing shadows
+                </div>
+            </div>
+        </div>
+
+        <!-- Input Fields Showcase -->
+        <div class="showcase-section">
+            <div class="component-group">
+                <div class="component-title">Glass Input Fields</div>
+                <div class="input-demo">
+                    <input type="text" class="username" placeholder="Username or Email">
+                </div>
+                <div class="input-demo">
+                    <input type="password" class="password" placeholder="Password">
+                </div>
+                <div class="input-demo">
+                    <input type="text" class="username" placeholder="Voucher Code (optional)">
+                </div>
+                <p class="glass-demo-text">Frosted glass inputs with blue focus state and smooth transitions</p>
+                <div class="glass-effect-indicator">
+                    ✨ Inset shadows create depth, focus adds glow effect
+                </div>
+            </div>
+        </div>
+
+        <!-- Cards Showcase -->
+        <div class="showcase-section">
+            <div class="component-group">
+                <div class="component-title">Glass Card</div>
+                <div class="wifi-info card">
+                    <h3 class="card-title">Connection Status</h3>
+                    <p style="color: #334155; margin: 8px 0; font-size: 14px;">
+                        <strong>IP Address:</strong> 192.168.1.100
+                    </p>
+                    <p style="color: #334155; margin: 8px 0; font-size: 14px;">
+                        <strong>Connection:</strong> Active
+                    </p>
+                    <p style="color: #94a3b8; margin: 12px 0 0; font-size: 12px;">
+                        Network quality: <span style="color: #10b981; font-weight: 600;">Excellent</span>
+                    </p>
+                </div>
+                <p class="glass-demo-text" style="margin-top: 16px;">Nested glass cards for information display</p>
+            </div>
+        </div>
+
+        <!-- Colors Showcase -->
+        <div class="showcase-section">
+            <div class="component-group">
+                <div class="component-title">Color Palette</div>
+                <div class="color-palette">
+                    <div class="color-swatch color-blue">
+                        Tahoe<br>Blue
+                    </div>
+                    <div class="color-swatch color-purple">
+                        Tahoe<br>Purple
+                    </div>
+                    <div class="color-swatch color-success">
+                        Success<br>Green
+                    </div>
+                    <div class="color-swatch color-warning">
+                        Warning<br>Amber
+                    </div>
+                </div>
+                <p class="glass-demo-text" style="margin-top: 12px;">Carefully chosen colors complementing the liquid glass aesthetic</p>
+            </div>
+        </div>
+
+        <!-- Badges Showcase -->
+        <div class="showcase-section">
+            <div class="component-group">
+                <div class="component-title">Status Indicators</div>
+                <div>
+                    <div class="badge-demo">✓ Active</div>
+                    <div class="badge-demo" style="background: rgba(16,185,129,0.2); border-color: rgba(16,185,129,0.4); color: #10b981;">✓ Connected</div>
+                    <div class="badge-demo" style="background: rgba(245,158,11,0.2); border-color: rgba(245,158,11,0.4); color: #f59e0b;">! Warning</div>
+                    <div class="badge-demo" style="background: rgba(255,107,107,0.2); border-color: rgba(255,107,107,0.4); color: #ff6b6b;">✕ Offline</div>
+                </div>
+                <p class="glass-demo-text">Glass badges for status and alerts</p>
+            </div>
+        </div>
+
+        <!-- Features Showcase -->
+        <div class="showcase-section">
+            <div class="component-group">
+                <div class="component-title">Features</div>
+                <ul class="feature-list">
+                    <li>Glassmorphism with 20px backdrop blur</li>
+                    <li>Smooth animations and transitions</li>
+                    <li>Full keyboard accessibility</li>
+                    <li>Responsive design for all devices</li>
+                    <li>High contrast focus indicators</li>
+                    <li>Modern typography</li>
+                    <li>Optimized performance</li>
+                    <li>MikroTik integration ready</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Demo Section -->
+        <div class="showcase-section">
+            <div class="component-group">
+                <div class="component-title">Live Demo</div>
+                <form style="margin: 0;">
+                    <input type="text" class="username" placeholder="Username" required>
+                    <input type="password" class="password" placeholder="Password" required style="margin-top: -10px;">
+                    <button class="button" style="margin-top: 16px;">Sign In</button>
+                    <button class="button2" style="margin-top: 8px;">Forgot Password?</button>
+                </form>
+                <p class="glass-demo-text">Try interacting with the form above</p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>
+                <strong>macOS Tahoe Liquid Glass Theme v2.0</strong><br>
+                Inspired by Apple's design philosophy<br>
+                <a href="#">View Documentation</a> • <a href="#">GitHub</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

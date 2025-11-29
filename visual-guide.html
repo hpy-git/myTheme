@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tahoe Liquid Glass - Visual Guide</title>
+    <link rel="stylesheet" href="css/horizon.css">
+    <style>
+        .guide-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .guide-section {
+            background: linear-gradient(135deg, rgba(255,255,255,0.32), rgba(255,255,255,0.15));
+            border: 1.5px solid rgba(255,255,255,0.5);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+        }
+
+        .guide-title {
+            font-size: 28px;
+            font-weight: 900;
+            color: #e6edf3;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .section-heading {
+            font-size: 20px;
+            font-weight: 800;
+            color: #5b7cfa;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section-heading:first-child {
+            margin-top: 0;
+        }
+
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .color-card {
+            border-radius: 12px;
+            padding: 20px;
+            color: white;
+            text-align: center;
+            font-weight: 600;
+            font-size: 14px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .color-blue {
+            background: linear-gradient(135deg, #5b7cfa, #4c5fa8);
+        }
+
+        .color-purple {
+            background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+        }
+
+        .color-success {
+            background: linear-gradient(135deg, #10b981, #059669);
+        }
+
+        .color-warning {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+        }
+
+        .color-danger {
+            background: linear-gradient(135deg, #ff6b6b, #ef4444);
+        }
+
+        .code-block {
+            background: rgba(0,0,0,0.3);
+            border-left: 3px solid #5b7cfa;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 13px;
+            color: #c7d2e0;
+            overflow-x: auto;
+            margin-bottom: 15px;
+        }
+
+        .demo-row {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .demo-item {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .demo-label {
+            font-size: 12px;
+            font-weight: 700;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            color: #c7d2e0;
+            font-size: 13px;
+        }
+
+        .comparison-table th {
+            background: rgba(91,124,250,0.15);
+            font-weight: 700;
+            color: #5b7cfa;
+        }
+
+        .comparison-table tr:hover td {
+            background: rgba(91,124,250,0.1);
+        }
+
+        .checklist {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .checklist li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            color: #c7d2e0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            font-size: 14px;
+        }
+
+        .checklist li:last-child {
+            border-bottom: none;
+        }
+
+        .checklist li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .tip-box {
+            background: rgba(245,158,11,0.1);
+            border-left: 3px solid #f59e0b;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            font-size: 13px;
+            color: #c7d2e0;
+        }
+
+        .tip-box::before {
+            content: "💡 TIP: ";
+            font-weight: 700;
+            color: #f59e0b;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: rgba(91,124,250,0.2);
+            border: 1px solid rgba(91,124,250,0.4);
+            color: #5b7cfa;
+            padding: 8px 16px;
+            border-radius: 16px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .nav-btn:hover {
+            background: rgba(91,124,250,0.3);
+            border-color: rgba(91,124,250,0.6);
+        }
+
+        .icon-demo {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .footer-link {
+            text-align: center;
+            color: #94a3b8;
+            font-size: 12px;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .footer-link a {
+            color: #5b7cfa;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .footer-link a:hover {
+            color: #8b5cf6;
+        }
+
+        /* Print friendly */
+        @media print {
+            body { background: white; color: black; }
+            .guide-section { box-shadow: none; backdrop-filter: none; border: 1px solid #ddd; }
+            .section-heading { color: #0066cc; }
+        }
+    </style>
+</head>
+<body>
+    <div class="guide-container">
+        <!-- Header -->
+        <div class="guide-section">
+            <h1 class="guide-title">🌊 Tahoe Liquid Glass Theme</h1>
+            <p style="text-align: center; color: #c7d2e0; font-size: 14px; margin: 0;">
+                Visual Quick Guide - macOS Inspired Glassmorphism Design
+            </p>
+        </div>
+
+        <!-- Color System -->
+        <div class="guide-section">
+            <h2 class="section-heading">🎨 Color Palette</h2>
+            <div class="color-grid">
+                <div class="color-card color-blue">
+                    <strong>Primary</strong><br>
+                    #5b7cfa
+                </div>
+                <div class="color-card color-purple">
+                    <strong>Accent</strong><br>
+                    #8b5cf6
+                </div>
+                <div class="color-card color-success">
+                    <strong>Success</strong><br>
+                    #10b981
+                </div>
+                <div class="color-card color-warning">
+                    <strong>Warning</strong><br>
+                    #f59e0b
+                </div>
+                <div class="color-card color-danger">
+                    <strong>Danger</strong><br>
+                    #ff6b6b
+                </div>
+            </div>
+            <p style="color: #c7d2e0; font-size: 13px; margin-top: 15px;">
+                These colors form the foundation of the Tahoe Liquid Glass design system. Use them consistently throughout your interface.
+            </p>
+        </div>
+
+        <!-- Buttons Guide -->
+        <div class="guide-section">
+            <h2 class="section-heading">🔘 Button Styles</h2>
+            <div class="demo-row">
+                <div class="demo-item">
+                    <div class="demo-label">Primary Button</div>
+                    <button class="button" style="width: 100%; margin-top: 0;">Sign In</button>
+                </div>
+                <div class="demo-item">
+                    <div class="demo-label">Secondary Button</div>
+                    <button class="button2" style="width: 100%; margin-top: 0;">Cancel</button>
+                </div>
+            </div>
+            <div class="demo-row">
+                <div class="demo-item">
+                    <div class="demo-label">Small Button</div>
+                    <button class="small-button">Help</button>
+                </div>
+            </div>
+
+            <h3 style="font-size: 14px; color: #5b7cfa; margin-top: 20px; font-weight: 700;">HTML Usage</h3>
+            <div class="code-block">&lt;button class="button"&gt;Primary&lt;/button&gt;
+&lt;button class="button2"&gt;Secondary&lt;/button&gt;
+&lt;button class="small-button"&gt;Small&lt;/button&gt;</div>
+        </div>
+
+        <!-- Input Fields Guide -->
+        <div class="guide-section">
+            <h2 class="section-heading">📝 Input Fields</h2>
+            <input type="text" class="username" placeholder="Username or Email" style="margin-bottom: 10px;">
+            <input type="password" class="password" placeholder="Password" style="margin-bottom: 0;">
+
+            <h3 style="font-size: 14px; color: #5b7cfa; margin-top: 20px; font-weight: 700;">Features</h3>
+            <ul class="checklist">
+                <li>Frosted glass appearance with white gradient</li>
+                <li>Blue focus glow effect</li>
+                <li>Inset shadows for depth</li>
+                <li>Smooth 300ms transitions</li>
+                <li>Touch-friendly sizing (52px height)</li>
+            </ul>
+        </div>
+
+        <!-- Customization Guide -->
+        <div class="guide-section">
+            <h2 class="section-heading">🎛️ Customization</h2>
+
+            <h3 style="font-size: 14px; color: #5b7cfa; font-weight: 700;">Change Primary Color</h3>
+            <div class="code-block">:root {
+    --primary: #YOUR_COLOR;
+    --primary-600: #DARKER_COLOR;
+}</div>
+
+            <h3 style="font-size: 14px; color: #5b7cfa; font-weight: 700; margin-top: 15px;">Adjust Glass Blur</h3>
+            <div class="code-block">:root {
+    --blur-lg: blur(30px);  /* More frosted */
+}</div>
+
+            <div class="tip-box">
+                You can customize all 30+ CSS variables without touching the HTML!
+            </div>
+        </div>
+
+        <!-- Component Reference -->
+        <div class="guide-section">
+            <h2 class="section-heading">📚 Component Reference</h2>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Component</th>
+                        <th>Class Name</th>
+                        <th>Use Case</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Container</td>
+                        <td><code>.container</code></td>
+                        <td>Main wrapper</td>
+                    </tr>
+                    <tr>
+                        <td>Title</td>
+                        <td><code>.brand</code></td>
+                        <td>Page heading</td>
+                    </tr>
+                    <tr>
+                        <td>Primary Button</td>
+                        <td><code>.button</code></td>
+                        <td>Main action</td>
+                    </tr>
+                    <tr>
+                        <td>Secondary Button</td>
+                        <td><code>.button2</code></td>
+                        <td>Alternative</td>
+                    </tr>
+                    <tr>
+                        <td>Small Button</td>
+                        <td><code>.small-button</code></td>
+                        <td>Compact</td>
+                    </tr>
+                    <tr>
+                        <td>Text Input</td>
+                        <td><code>.username</code></td>
+                        <td>Text/Email</td>
+                    </tr>
+                    <tr>
+                        <td>Password Input</td>
+                        <td><code>.password</code></td>
+                        <td>Password</td>
+                    </tr>
+                    <tr>
+                        <td>Info Card</td>
+                        <td><code>.card</code></td>
+                        <td>Display info</td>
+                    </tr>
+                    <tr>
+                        <td>Alert Box</td>
+                        <td><code>.notice</code></td>
+                        <td>Warnings</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Browser Support -->
+        <div class="guide-section">
+            <h2 class="section-heading">🌐 Browser Support</h2>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Browser</th>
+                        <th>Version</th>
+                        <th>Support</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Chrome</td>
+                        <td>76+</td>
+                        <td>✅ Full</td>
+                    </tr>
+                    <tr>
+                        <td>Firefox</td>
+                        <td>103+</td>
+                        <td>✅ Full</td>
+                    </tr>
+                    <tr>
+                        <td>Safari</td>
+                        <td>15+</td>
+                        <td>✅ Full</td>
+                    </tr>
+                    <tr>
+                        <td>Edge</td>
+                        <td>90+</td>
+                        <td>✅ Full</td>
+                    </tr>
+                    <tr>
+                        <td>Mobile Browsers</td>
+                        <td>Recent</td>
+                        <td>✅ Full</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Quick Checklist -->
+        <div class="guide-section">
+            <h2 class="section-heading">✅ Quick Checklist</h2>
+            <ul class="checklist">
+                <li>CSS file loaded (horizon.css)</li>
+                <li>Buttons have hover lift effect</li>
+                <li>Inputs show blue glow on focus</li>
+                <li>Mobile view is responsive</li>
+                <li>No console errors (F12)</li>
+                <li>Tested on multiple devices</li>
+                <li>Backup created</li>
+                <li>Ready for deployment</li>
+            </ul>
+        </div>
+
+        <!-- Resources -->
+        <div class="guide-section">
+            <h2 class="section-heading">📚 Documentation</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 20px;">
+                <div style="padding: 15px; background: rgba(91,124,250,0.1); border-radius: 8px; border-left: 3px solid #5b7cfa;">
+                    <strong style="color: #5b7cfa;">Full Guide</strong>
+                    <p style="margin: 8px 0 0; color: #c7d2e0; font-size: 12px;">GLASS_THEME_GUIDE.md</p>
+                </div>
+                <div style="padding: 15px; background: rgba(139,92,246,0.1); border-radius: 8px; border-left: 3px solid #8b5cf6;">
+                    <strong style="color: #8b5cf6;">Setup Guide</strong>
+                    <p style="margin: 8px 0 0; color: #c7d2e0; font-size: 12px;">MIKROTIK_INTEGRATION.md</p>
+                </div>
+                <div style="padding: 15px; background: rgba(16,185,129,0.1); border-radius: 8px; border-left: 3px solid #10b981;">
+                    <strong style="color: #10b981;">Customization</strong>
+                    <p style="margin: 8px 0 0; color: #c7d2e0; font-size: 12px;">css/CUSTOMIZATION.css</p>
+                </div>
+                <div style="padding: 15px; background: rgba(255,107,107,0.1); border-radius: 8px; border-left: 3px solid #ff6b6b;">
+                    <strong style="color: #ff6b6b;">Live Demo</strong>
+                    <p style="margin: 8px 0 0; color: #c7d2e0; font-size: 12px;">glass-showcase.html</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer-link">
+            <p>
+                <strong>macOS Tahoe Liquid Glass Theme v2.0</strong><br>
+                Beautiful glassmorphism design for MikroTik Hotspot portals<br>
+                <a href="#">View Full Docs</a> • <a href="#">GitHub Repo</a> • <a href="#">Support</a>
+            </p>
+            <p style="margin-top: 15px; font-size: 11px;">
+                MIT License • Free to use and customize<br>
+                Created by HPY • November 2025
+            </p>
+        </div>
+    </div>
+</body>
+</html>
