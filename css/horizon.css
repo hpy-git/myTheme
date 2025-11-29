@@ -183,21 +183,22 @@ body::before {
 }
 
 /* New animated layer for liquid glass motion */
+/* Fix body::after background-image list (comma-separated) */
 body::after {
   content: "";
   position: fixed;
   inset: 0;
   pointer-events: none;
-  z-index: 0; /* sits above background gradients but behind content (.main has z-index:1) */
+  z-index: 0;
   opacity: var(--liquid-opacity);
-  background-image: var(--bg-image)
-    var(--liquid-layer-1),
-    var(--liquid-layer-2),
-    var(--liquid-layer-3),
-    var(--liquid-overlay);
-  background-repeat: no-repeat, no-repeat, no-repeat, repeat;
-  background-position: 5% 10%, 95% 90%, 50% 50%, 0 0;
-  background-size: 1200px 700px, 1400px 800px, 1800px 1000px, cover;
+  background-image: var(--bg-image),
+                    var(--liquid-layer-1),
+                    var(--liquid-layer-2),
+                    var(--liquid-layer-3),
+                    var(--liquid-overlay);
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, repeat;
+  background-position: center, 5% 10%, 95% 90%, 50% 50%, 0 0;
+  background-size: cover, 1200px 700px, 1400px 800px, 1800px 1000px, cover;
   mix-blend-mode: screen;
   filter: blur(18px) saturate(120%);
   transform: translateZ(0);
