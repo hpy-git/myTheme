@@ -168,7 +168,7 @@ $(endif)</span>
           </div>
 
         <!-- Login Form Container -->
-        <div class="login-container container" style="width:100%; max-width:400px; margin:0 auto;">
+        <div class="login-container container" id="loginFormContainer" style="width:100%; max-width:400px; margin:0 auto; display:none;">
           <div class="blinking" id="infologin"></div>
           <form autocomplete="off" name="login" action="$(link-login-only)" method="post" $(if chap-id) onSubmit="return doLogin()" $(endif) class="login-form">
             <input type="hidden" name="dst" value="$(link-status)" />
@@ -290,12 +290,17 @@ function member() {
 
 // Handle login method dropdown selection
 function handleLoginMethodChange(method) {
+    var loginFormContainer = document.getElementById('loginFormContainer');
     if (method === 'voucher') {
+        if (loginFormContainer) loginFormContainer.style.display = 'block';
         voucher();
     } else if (method === 'member') {
+        if (loginFormContainer) loginFormContainer.style.display = 'block';
         member();
     } else if (method === 'qr') {
         window.location = 'https://laksa19.github.io/myqr';
+    } else {
+        if (loginFormContainer) loginFormContainer.style.display = 'none';
     }
 }
 
