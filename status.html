@@ -46,41 +46,62 @@ $(endif)
 $(elif login-by != 'mac')
 	<div style="margin-top: var(--space-4); text-align: center;"><h3 style="color: var(--text-0);">Welcome</h3><i style="font-size: 48px;" class="icon icon-user-circle-o">&#xf2be;</i> <h3 id="user" style="color: var(--text-0);">$(username)</h3></div><br>
 $(endif)
-<div style="background: linear-gradient(135deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.12) 100%); border: 1.5px solid rgba(255,255,255,0.5); border-radius: var(--radius-sm); padding: var(--space-3); box-shadow: 0 12px 30px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.3); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);">
 <form action="$(link-logout)" name="logout" onSubmit="return openLogout()">
 
-
+<!-- IP Address & MAC Address Container -->
+<div style="background: linear-gradient(135deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.12) 100%); border: 1.5px solid rgba(255,255,255,0.5); border-radius: var(--radius-sm); padding: var(--space-3); margin-bottom: var(--space-2); box-shadow: 0 12px 30px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.3); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);">
 <table class="table">
 	<tr><td align="right" style="width: 40%;">IP Address <i class="icon icon-sitemap">&#xf0e8;</i> </td><td>$(ip)</td></tr>
     <tr><td align="right">MAC Address <i class="icon icon-barcode">&#xe80a;</i> </td><td>$(mac)</td></tr>
-    <tr><td align="right">Upload <i class="icon icon-upload">&#xe808;</i> </td><td>$(bytes-in-nice)</td></tr>
+</table>
+</div>
+
+<!-- Upload & Download Container -->
+<div style="background: linear-gradient(135deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.12) 100%); border: 1.5px solid rgba(255,255,255,0.5); border-radius: var(--radius-sm); padding: var(--space-3); margin-bottom: var(--space-2); box-shadow: 0 12px 30px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.3); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);">
+<table class="table">
+    <tr><td align="right" style="width: 40%;">Upload <i class="icon icon-upload">&#xe808;</i> </td><td>$(bytes-in-nice)</td></tr>
     <tr><td align="right">Download <i class="icon icon-download">&#xe809;</i> </td><td>$(bytes-out-nice)</td></tr>
-	<tr><td align="right">Connected <i class="icon icon-exchange">&#xf0ec;</i> </td><td>$(uptime)</td></tr>
+</table>
+</div>
+
+<!-- Connected Container -->
+<div style="background: linear-gradient(135deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.12) 100%); border: 1.5px solid rgba(255,255,255,0.5); border-radius: var(--radius-sm); padding: var(--space-3); margin-bottom: var(--space-2); box-shadow: 0 12px 30px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.3); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);">
+<table class="table">
+	<tr><td align="right" style="width: 40%;">Connected <i class="icon icon-exchange">&#xf0ec;</i> </td><td>$(uptime)</td></tr>
+</table>
+</div>
+
+<!-- Bytes Left & Time Left Container -->
+<div style="background: linear-gradient(135deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.12) 100%); border: 1.5px solid rgba(255,255,255,0.5); border-radius: var(--radius-sm); padding: var(--space-3); margin-bottom: var(--space-2); box-shadow: 0 12px 30px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.3); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);">
+<table class="table">
 $(if remain-bytes-total)
-    <tr><td align="right">Bytes Left <i class="icon icon-hourglass-2">&#xf252;</i> </td><td>$(remain-bytes-total-nice)</td></tr>
+    <tr><td align="right" style="width: 40%;">Bytes Left <i class="icon icon-hourglass-2">&#xf252;</i> </td><td>$(remain-bytes-total-nice)</td></tr>
 $(endif)
 $(if session-time-left)
     <tr><td align="right">Time Left <i class="icon icon-clock">&#xe805;</i> </td><td>$(session-time-left)</td></tr>
 $(endif)
+</table>
+</div>
+
+<!-- Status & Refresh Container -->
+<div style="background: linear-gradient(135deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.12) 100%); border: 1.5px solid rgba(255,255,255,0.5); border-radius: var(--radius-sm); padding: var(--space-3); margin-bottom: var(--space-2); box-shadow: 0 12px 30px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.3); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);">
+<table class="table">
 $(if blocked == 'yes')
-	<tr><td align="right">Status <i class="icon icon-check">&#xe807;</i> </td><td><div style="color: #FF8080">
+	<tr><td align="right" style="width: 40%;">Status <i class="icon icon-check">&#xe807;</i> </td><td><div style="color: #FF8080">
 <a href="$(link-advert)" target="hotspot_advert">advertisement</a> required</div></td></tr>
 $(elif refresh-timeout)
-	<tr><td align="right">Refresh <i <i class="icon icon-arrows-cw">&#xe800;</i> </td><td>$(refresh-timeout)</td></tr>
+	<tr><td align="right" style="width: 40%;">Refresh <i class="icon icon-arrows-cw">&#xe800;</i> </td><td>$(refresh-timeout)</td></tr>
 $(endif)
-   <!-- <tr><td align="right">Expired <i <i class="icon icon-calendar">&#xe806;</i> </td><td style="padding-top:0px; padding-left:2px;"><iframe id="exp" frameborder="0" scrolling="no" src="about:blank"></iframe></td></tr>-->
-
 </table>
-$(if login-by-mac != 'yes')
-<br>
-<!-- user manager link. if user manager resides on other router, replace $(hostname) by its address
-<button onclick="document.location='http://$(hostname)/user?subs='; return false;">status</button>
-end of user manager link -->
+</div>
 
-<button class="button2" type="submit" style="margin-top: var(--space-3);"><i class="icon icon-logout">&#xe804;</i> Logout</button>
+$(if login-by-mac != 'yes')
+<!-- Logout Button Container -->
+<div style="margin-top: var(--space-3);">
+<button class="button2" type="submit"><i class="icon icon-logout">&#xe804;</i> Logout</button>
+</div>
 $(endif)
 </form>
-</div>
 </div>
 </div>
 <script type="text/javascript">
