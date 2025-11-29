@@ -85,7 +85,7 @@ $(endif)
       <!--<button id="qr" class="small-button" onclick="window.location='https://laksa19.github.io/myqr';"> <i class="icon icon-qrcode">&#xe801;</i>&nbsp;Scan QR</button>-->
         </div>
         <!-- Login Form Container -->
-        <div class="login-container container" id="loginFormContainer" style="width:100%; max-width:400px; margin:0 auto;">
+        <div class="login-container" id="loginFormContainer" style="width:100%; max-width:400px; margin:0 auto;">
           <div class="blinking" id="infologin" style="text-align: center;"></div>
           <form autocomplete="off" name="login" action="$(link-login-only)" method="post" $(if chap-id) onSubmit="return doLogin()" $(endif) class="login-form">
             <input type="hidden" name="dst" value="$(link-status)" />
