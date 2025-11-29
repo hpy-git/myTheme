@@ -1,42 +1,44 @@
-var cloud = {
-        varName: function() {
-            return this.textEdit;
-          }
-        }
-        //WIFI NAME HERE
-        var wifiName = {
-          textEdit:"YOUR WIFI NAME HERE",
-        }
-        //RUNNING BANNER TEXT HERE
-        var runningText = {
-          textEdit:"MOVING TEXT ANNOUNCEMENT",
-        }
-        //INFO TEXT HERE
-        var infoText = {
-          textEdit:"INFORMATION TEXT HERE.",
-        }
-        //COPYRIGHT TEXT HERE
-        var copyrightText = {
-          textEdit:"COPRIGHT 2025 YOUR COMPANY.",
-        }
-        //POWERED BY TEXT HERE
-        var pwrText = {
-          textEdit:"POWERED BY YOUR COMPANY.",
-        }
+// ...existing code...
+(function() {
+  // safe DOM-ready wrapper
+  function ready(fn) {
+    if (document.readyState !== 'loading') fn();
+    else document.addEventListener('DOMContentLoaded', fn);
+  }
 
-        var a = cloud.varName.call(wifiName); 
-        document.getElementById("callwifiName").innerHTML = a;
+  ready(function () {
+    console.info('Hotspot helper: toggle helper loaded');
 
-        var b = cloud.varName.call(runningText); 
-        document.getElementById("callrunningText").innerHTML = b;
+    // delegated toggle: use data-toggle or data-target on buttons
+    document.addEventListener('click', function (ev) {
+      var btn = ev.target.closest('[data-toggle], [data-target], .button, .small-button, .show-toggle');
+      if (!btn) return;
 
-        var c = cloud.varName.call(infoText); 
-        document.getElementById("callinfoText").innerHTML = c;
+      // explicit selector via attributes
+      var selector = btn.getAttribute('data-toggle') || btn.getAttribute('data-target');
+      if (selector) {
+        try {
+          var node = document.querySelector(selector);
+          if (node) node.classList.toggle('hidden');
+          else console.warn('Hotspot helper: no element for selector', selector);
+        } catch (err) {
+          console.error('Hotspot helper: invalid selector', selector, err);
+        }
+        return;
+      }
 
-        var d = cloud.varName.call(copyrightText); 
-        document.getElementById("callcopyrightText").innerHTML = d;
-
-        var e = cloud.varName.call(pwrText); 
-        document.getElementById("callpwrText").innerHTML = e;
-
-        
+      // fallback: toggle common hotspot UI pieces inside nearest container or whole doc
+      var scope = btn.closest('.container') || document;
+      var common = [
+        '.login-form', '.voucher', '.username', '.password', '.qr-code',
+        '.network-details', '.wifi-rates', '#voucher', '#username', '#password', '#qr'
+      ];
+      var toggled = false;
+      common.forEach(function(s) {
+        var el = scope.querySelector(s);
+        if (el) { el.classList.toggle('hidden'); toggled = true; }
+      });
+      if (!toggled) console.info('Hotspot helper: click ignored (no known targets found)', btn);
+    });
+  });
+})();
