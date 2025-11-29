@@ -65,6 +65,19 @@ body {
 </head>
 <body class="wallpaper-active">
 <div class="wallpaper-bg-image"></div>
+<!-- Sparkle Container -->
+<div class="sparkle-container" id="sparkleContainer">
+  <div class="float-sparkle"></div>
+  <div class="float-sparkle"></div>
+  <div class="float-sparkle"></div>
+  <div class="float-sparkle"></div>
+  <div class="float-sparkle"></div>
+  <div class="float-sparkle"></div>
+  <div class="float-sparkle"></div>
+  <div class="float-sparkle"></div>
+  <div class="float-sparkle"></div>
+  <div class="float-sparkle"></div>
+</div>
 <div class="wallpaper-content" style="display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: var(--space-3);">
 <div class="error-container">
   <h2>🔴 Connection Error</h2>
@@ -72,5 +85,35 @@ body {
   <a href="$(link-login)" class="error-link">Return to Login</a>
 </div>
 </div>
+<script type="text/javascript">
+  // ----- Sparkle effect on click -----
+  function createSparkle(x, y) {
+    const sparkle = document.createElement('div');
+    sparkle.className = 'sparkle';
+    sparkle.style.left = x + 'px';
+    sparkle.style.top = y + 'px';
+    sparkle.style.color = ['✨', '💫', '⭐'][Math.floor(Math.random() * 3)];
+    document.body.appendChild(sparkle);
+    setTimeout(() => sparkle.remove(), 2000);
+  }
+
+  // Add sparkles on button/link clicks
+  document.querySelectorAll('button, a').forEach(el => {
+    el.addEventListener('click', (e) => {
+      createSparkle(e.clientX, e.clientY);
+      createSparkle(e.clientX + 20, e.clientY - 20);
+      createSparkle(e.clientX - 20, e.clientY - 20);
+    });
+  });
+
+  // Add sparkles on random intervals for ambient effect
+  setInterval(() => {
+    if (Math.random() > 0.7) {
+      const x = Math.random() * window.innerWidth;
+      const y = Math.random() * window.innerHeight;
+      createSparkle(x, y);
+    }
+  }, 1000);
+</script>
 </body>
 </html>
