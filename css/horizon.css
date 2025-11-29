@@ -85,7 +85,6 @@
                    linear-gradient(135deg, #0a1427 0%, #1a2a4a 50%, #0a1427 100%);
 
   /* Optional background image hook (set to none by default) */
-  /*--bg-image: none; */
   --bg-image: url('./img/lq/Mountain-valley-clouds-iPhone-wallpaper.png');
 
   /* Tahoe Background Gradients */
