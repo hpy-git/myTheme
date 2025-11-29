@@ -153,7 +153,7 @@ $(endif)
           <div class="button-row" style="margin-top:10px;">
             <button id="btnvrc" class="small-button" onclick="voucher();"><i class="icon icon-ticket">&#xe802;</i>Voucher</button>
             <button id="btnmem" class="small-button" onclick="member();"><i class="icon icon-user-circle-o">&#xf2be;</i>Member</button>
-            <button id="qr" class="small-button" onclick="window.location='https://laksa19.github.io/myqr';"> <i class="icon icon-qrcode">&#xe801;</i>QR</button>
+            <button id="qr" class="small-button" onclick="window.location='https://laksa19.github.io/myqr';"> <i class="icon icon-qrcode">&#xe801;</i>Scan QR Code</button>
           </div>
           $(if trial == 'yes')
           <div class="box" style="margin-top:16px;"><a style="text-decoration: none" href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Click here for 15 minutes Free Trial&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></div>
@@ -250,7 +250,6 @@ function voucher() {
     //username.focus();
     username.onkeyup = setpass;
     username.placeholder = "Your voucher code here";
-    username.style = "border-radius:3px 3px 0px 0px;"
     password.type = "hidden";
     infologin.innerHTML = "Enter Voucher Code";
 }
@@ -260,10 +259,8 @@ function member() {
     //username.focus();
     username.onkeyup = "";
     username.placeholder = "Enter User ID";
-    username.style = "border-radius:3px 3px 0px 0px;"
     password.type = "password";
     password.placeholder = "Enter User Password";
-    password.style = "border-radius:3px 3px 0px 0px;"
     infologin.innerHTML = "Enter Username & Password";
 }
 
