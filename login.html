@@ -91,12 +91,14 @@ $(endif)
         -->
 
           <!-- Old Login Method Buttons -->
+           <div class="login-method-container container" style="width:100%; max-width:400px; margin:0 auto;"></div>
            <button id="btnvrc" class="small-button" onclick="voucher();"><i class="icon icon-ticket">&#xe802;</i>&nbsp;Voucher</button>
                 <button id="btnmem" class="small-button" onclick="member();"><i class="icon icon-user-circle-o">&#xf2be;</i>&nbsp;Member</button>
                 <button id="qr" class="small-button" onclick="window.location='https://laksa19.github.io/myqr';"> <i class="icon icon-qrcode">&#xe801;</i>&nbsp;Scan QR</button>
-
+          </div>
+          
         <!-- Login Form Container -->
-        <div class="login-container container" id="loginFormContainer" style="width:100%; max-width:400px; margin:0 auto; display:none;">
+        <div class="login-container container" id="loginFormContainer" style="width:100%; max-width:400px; margin:0 auto;">
           <div class="blinking" id="infologin"></div>
           <form autocomplete="off" name="login" action="$(link-login-only)" method="post" $(if chap-id) onSubmit="return doLogin()" $(endif) class="login-form">
             <input type="hidden" name="dst" value="$(link-status)" />
@@ -264,7 +266,7 @@ function member() {
     infologin.innerHTML = "Enter Username & Password";
 }
 </script>
-<!--
+
 <script>
 // Handle login method dropdown selection
 function handleLoginMethodChange(method) {
@@ -283,7 +285,7 @@ function handleLoginMethodChange(method) {
 }
 
 </script>
-  -->
+
 <!-- Audio Files-->
 <audio id="clickSound" src="audio/sfx/pop-reverb-423718.mp3" preload="auto" style="display: none;"></audio>
 <audio id="bgAudio" src="audio/bgm/tlou-comp.mp3" preload="auto" loop autoplay style="display:none"></audio>
