@@ -109,15 +109,15 @@
   box-sizing: border-box;
 }
 
-.theme-dark:root {
+:root.theme-dark {
   --bg-0: #000000;
   --bg-1: #0d0d0d;
   --glass-light: rgba(255,255,255,0.15);
   --surface-veil: rgba(255,255,255,0.12);
 }
 
-/* Light theme (opt-in via .theme-light) */
-.theme-light:root {
+/* Light theme (opt-in via html class="theme-light") */
+:root.theme-light {
   --bg-0: #ffffff;
   --bg-1: #f8f9fa;
   --text-0: #000000;
