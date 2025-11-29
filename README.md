@@ -19,23 +19,46 @@
 - Troubleshooting
 - Acknowledgments
 - Support
-- FAQ
-
 ---
+# 🌊 myTheme — Tahoe Liquid Glass Edition
 
+> A **beautiful, modern glassmorphic theme** for MikroTik Hotspot captive portal.  
+> Now featuring **macOS Tahoe Liquid Glass design** with atmospheric backgrounds and smooth animations!
 ## Overview
+## ✨ What's New: Tahoe Liquid Glass v2.0
 
+Your hotspot portal now features:
 `myTheme-v3` is a polished Hotspot theme for MikroTik RouterOS, designed to improve the user experience of captive portal pages (login, status, logout) while remaining lightweight and fully compatible with RouterOS Hotspot variables.
+🎨 **Glassmorphism Design** — Frosted glass effects with 20px backdrop blur  
+🌊 **6-Layer Background System** — Atmospheric Tahoe gradients with smooth animations  
+💎 **Premium Appearance** — Professional, modern look inspired by Apple macOS  
+📱 **Fully Responsive** — Perfect on mobile, tablet, and desktop  
+⚡ **60 FPS Performance** — Smooth animations with zero jank  
+♿ **WCAG AA Accessible** — Keyboard navigation, screen reader support  
+🎯 **30+ CSS Variables** — Easy customization for your brand  
+📚 **Comprehensive Documentation** — 16,000+ words of guides and examples
 
-**Key goals:**
 - Clean UI for faster login and better status visibility.
-- Fully Customized portal (logo, brand colors, wording).
 - Minimal dependencies and optimized assets for low-resource environments.
-
 ---
 
-## Features
+## 🚀 Quick Start — 3 Steps!
+---
+### Step 1: Link the CSS
+```html
+<link rel="stylesheet" href="css/horizon.css">
+```
 
+### Step 2: Use Theme Classes
+```html
+<input type="text" class="username">
+<button class="button">Login</button>
+```
+## Features
+### Step 3: Deploy!
+Test on devices and deploy.
+
+👉 **[See Full Deployment Guide →](DEPLOYMENT_GUIDE.md)**
 - ✅ Responsive layout for phones, tablets, and laptops  
 - ✅ Works with default Hotspot templates (`login.html`, `status.html`, `logout.html`, etc.)  
 - ✅ Optional Terms of Service modal / page  

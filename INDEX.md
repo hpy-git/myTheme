@@ -61,6 +61,24 @@ This complete package contains everything you need to transform your hotspot por
    - Technical specifications
    - Quality assurance details
 
+6. **`TAHOE_BACKGROUND_GUIDE.md`** ⭐ **NEW!**
+   - Background system documentation
+   - 6-layer gradient breakdown
+   - Animation explanation
+   - Customization examples
+
+7. **`INTEGRATION_GUIDE.md`** ⭐ **NEW!**
+   - Complete integration guide
+   - How all components work together
+   - System architecture overview
+   - Component usage cheat sheet
+
+8. **`PROJECT_COMPLETE.md`** ⭐ **NEW!**
+   - Project completion summary
+   - What's been created
+   - Technical specifications
+   - Deployment checklist
+
 ### 🎪 Interactive Demos
 
 - **`glass-showcase.html`**
@@ -74,6 +92,12 @@ This complete package contains everything you need to transform your hotspot por
   - Component gallery
   - Customization examples
   - Browser compatibility table
+
+- **`tahoe-background-demo.html`** ⭐ **NEW!**
+  - Tahoe background system showcase
+  - 6-layer gradient visualization
+  - Animation demonstration
+  - Customization examples
 
 ## 🚀 Quick Start (Choose Your Path)
 

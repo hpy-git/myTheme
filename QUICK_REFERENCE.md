@@ -199,14 +199,29 @@ $(button-login)                  <!-- Login button text -->
 | Text too small | Change `--fs-300` value |
 | Colors not updating | Reload page, check CSS file |
 
-## 📱 Mobile Testing
+## 🌊 Backgrounds
 
-Test on these devices:
-- iPhone 12/13/14/15
-- Android 10+
-- iPad
-- Android tablets
-- Desktop browsers
+### Tahoe Background (New!)
+
+Beautiful multi-layer gradient with atmospheric glows:
+- Deep blue base (#0a1427)
+- Blue radial glow (20%)
+- Purple radial glow (15%)
+- Smooth 20-second animation
+- Premium, professional look
+
+### Background Features
+
+✨ 6-layer gradient system  
+✨ Smooth animation loop  
+✨ Fixed attachment (no jank)  
+✨ Radial glows from corners  
+✨ Subtle fade transitions  
+✨ 60 FPS performance  
+
+### View Demo
+
+Open `tahoe-background-demo.html` to see the background in action!
 
 ## 🔗 File Structure
 
