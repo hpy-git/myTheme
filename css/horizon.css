@@ -1372,3 +1372,51 @@ select option:checked,
 .footer-container a:hover {
   color: var(--accent);
 }
+
+/* ===== Background Wallpaper (Tahoe Inspiration) ===== */
+.wallpaper-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    linear-gradient(135deg, rgba(15,23,42,0.95) 0%, rgba(30,41,59,0.92) 50%, rgba(15,23,42,0.95) 100%),
+    linear-gradient(45deg, rgba(91,124,250,0.12) 0%, rgba(139,92,246,0.08) 50%, rgba(15,92,186,0.12) 100%);
+  background-size: 100% 100%, 400% 400%;
+  background-attachment: fixed;
+  animation: tahoe-gradient 15s ease infinite;
+  z-index: -1;
+}
+
+@keyframes tahoe-gradient {
+  0% { background-position: 0% 0%, 0% 0%; }
+  50% { background-position: 100% 100%, 100% 100%; }
+  100% { background-position: 0% 0%, 0% 0%; }
+}
+
+/* Wallpaper with image background */
+.wallpaper-bg-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(135deg, rgba(15,23,42,0.75) 0%, rgba(30,41,59,0.72) 50%, rgba(15,23,42,0.75) 100%),
+    url('../img/lq/Mountain-valley-clouds-iPhone-wallpaper.png');
+  background-size: cover, cover;
+  background-position: center, center;
+  background-attachment: fixed, fixed;
+  z-index: -1;
+}
+
+/* Content wrapper to sit above wallpaper */
+.wallpaper-content {
+  position: relative;
+  z-index: 1;
+}
+
+body.wallpaper-active {
+  background-color: transparent;
+}

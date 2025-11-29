@@ -21,7 +21,9 @@ $(if refresh-timeout)
 </script>
 $(endif)
 </head>
-<body>
+<body class="wallpaper-active">
+<div class="wallpaper-bg-image"></div>
+<div class="wallpaper-content">
 <div class="main">
 <div class="container" style="max-width: 450px;">
 $(if login-by == 'trial')
@@ -35,7 +37,8 @@ $(endif)
 </div>
 <script type="text/javascript">
 	document.getElementById('title').innerHTML = window.location.hostname + " &gt; success";	
-    document.getElementById('dname').innerHTML = window.location.hostname;	
+    document.getElementById('dname').innerHTML = window.location.hostname;\t
 </script>
+</div>
 </body>
 </html>
