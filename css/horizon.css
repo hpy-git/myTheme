@@ -179,8 +179,7 @@ body {
   color-scheme: dark light;
   overflow-x: hidden;
   position: relative;
-  background: url('../img/tahoe-background-demo.html') no-repeat center center fixed;
-  background-size: cover;
+  min-height: 100vh;
 }
 
 /* Subtle glass veil overlay - Creates smooth color transition */
