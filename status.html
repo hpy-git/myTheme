@@ -40,69 +40,141 @@ $(endif)
 </head>
 <body $(if advert-pending == 'yes')	onLoad="openAdvert()" $(endif) >
 <div class="main">
-  <div class="container" style="max-width: 600px; margin: 0 auto;">
-  $(if login-by == 'trial')
-	<div style="margin-top: var(--space-4); text-align: center;"><h3 style="color: var(--text-0);">Welcome</h3><i style="font-size: 48px;" class="icon icon-user-circle-o">&#xf2be;</i> <h3 style="color: var(--text-0);">Trial User</h3></div><br>
+  <div style="max-width: 700px; margin: 0 auto; padding: var(--space-3);">
+  
+  <!-- Welcome Section - Premium Glass Container -->
+$(if login-by == 'trial')
+  <div class="container" style="max-width: 100%; margin-bottom: var(--space-4); text-align: center; padding: var(--space-4);">
+    <i style="font-size: 64px; color: #5b7cfa; margin-bottom: var(--space-2); display: block;" class="icon icon-user-circle-o">&#xf2be;</i>
+    <h2 style="color: var(--text-0); margin: 0 0 var(--space-1) 0; font-size: 24px;">Welcome</h2>
+    <p style="color: var(--text-1); margin: 0; font-size: 16px; font-weight: 500;">Trial User</p>
+  </div>
 $(elif login-by != 'mac')
-	<div style="margin-top: var(--space-4); text-align: center;"><h3 style="color: var(--text-0);">Welcome</h3><i style="font-size: 48px;" class="icon icon-user-circle-o">&#xf2be;</i> <h3 id="user" style="color: var(--text-0);">$(username)</h3></div><br>
+  <div class="container" style="max-width: 100%; margin-bottom: var(--space-4); text-align: center; padding: var(--space-4);">
+    <i style="font-size: 64px; color: #5b7cfa; margin-bottom: var(--space-2); display: block;" class="icon icon-user-circle-o">&#xf2be;</i>
+    <h2 style="color: var(--text-0); margin: 0 0 var(--space-1) 0; font-size: 24px;">Welcome Back</h2>
+    <p id="user" style="color: var(--text-1); margin: 0; font-size: 18px; font-weight: 600;">$(username)</p>
+  </div>
 $(endif)
-<form action="$(link-logout)" name="logout" onSubmit="return openLogout()">
 
-<!-- IP Address & MAC Address Container -->
-<div style="background: linear-gradient(135deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.12) 100%); border: 1.5px solid rgba(255,255,255,0.5); border-radius: var(--radius-sm); padding: var(--space-3); margin-bottom: var(--space-2); box-shadow: 0 12px 30px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.3); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);">
-<table class="table">
-	<tr><td align="right" style="width: 40%;">IP Address <i class="icon icon-sitemap">&#xf0e8;</i> </td><td>$(ip)</td></tr>
-    <tr><td align="right">MAC Address <i class="icon icon-barcode">&#xe80a;</i> </td><td>$(mac)</td></tr>
-</table>
-</div>
+  <form action="$(link-logout)" name="logout" onSubmit="return openLogout()">
+  
+  <!-- Connection Info Section -->
+  <div style="margin-bottom: var(--space-3);">
+    <h3 style="color: var(--text-0); font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 var(--space-2) 0; opacity: 0.8;">Connection Info</h3>
+    
+    <!-- Network Details - 2 Column Grid -->
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2); margin-bottom: var(--space-2);">
+      <!-- IP Address Card -->
+      <div class="container" style="padding: var(--space-3); text-align: center;">
+        <i class="icon icon-sitemap" style="font-size: 24px; color: #5b7cfa; display: block; margin-bottom: var(--space-1);">&#xf0e8;</i>
+        <p style="color: var(--text-2); font-size: 12px; margin: 0 0 var(--space-1) 0; text-transform: uppercase; letter-spacing: 0.5px;">IP Address</p>
+        <p style="color: var(--text-0); font-size: 14px; font-weight: 600; margin: 0; word-break: break-all;">$(ip)</p>
+      </div>
+      
+      <!-- MAC Address Card -->
+      <div class="container" style="padding: var(--space-3); text-align: center;">
+        <i class="icon icon-barcode" style="font-size: 24px; color: #8b5cf6; display: block; margin-bottom: var(--space-1);">&#xe80a;</i>
+        <p style="color: var(--text-2); font-size: 12px; margin: 0 0 var(--space-1) 0; text-transform: uppercase; letter-spacing: 0.5px;">MAC Address</p>
+        <p style="color: var(--text-0); font-size: 13px; font-weight: 600; margin: 0; font-family: monospace; word-break: break-all;">$(mac)</p>
+      </div>
+    </div>
+  </div>
 
-<!-- Upload & Download Container -->
-<div style="background: linear-gradient(135deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.12) 100%); border: 1.5px solid rgba(255,255,255,0.5); border-radius: var(--radius-sm); padding: var(--space-3); margin-bottom: var(--space-2); box-shadow: 0 12px 30px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.3); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);">
-<table class="table">
-    <tr><td align="right" style="width: 40%;">Upload <i class="icon icon-upload">&#xe808;</i> </td><td>$(bytes-in-nice)</td></tr>
-    <tr><td align="right">Download <i class="icon icon-download">&#xe809;</i> </td><td>$(bytes-out-nice)</td></tr>
-</table>
-</div>
+  <!-- Data Usage Section -->
+  <div style="margin-bottom: var(--space-3);">
+    <h3 style="color: var(--text-0); font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 var(--space-2) 0; opacity: 0.8;">Data Usage</h3>
+    
+    <!-- Upload & Download - 2 Column Grid -->
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2); margin-bottom: var(--space-2);">
+      <!-- Upload Card -->
+      <div class="container" style="padding: var(--space-3); text-align: center;">
+        <i class="icon icon-upload" style="font-size: 24px; color: #10b981; display: block; margin-bottom: var(--space-1);">&#xe808;</i>
+        <p style="color: var(--text-2); font-size: 12px; margin: 0 0 var(--space-1) 0; text-transform: uppercase; letter-spacing: 0.5px;">Upload</p>
+        <p style="color: var(--text-0); font-size: 16px; font-weight: 600; margin: 0;">$(bytes-in-nice)</p>
+      </div>
+      
+      <!-- Download Card -->
+      <div class="container" style="padding: var(--space-3); text-align: center;">
+        <i class="icon icon-download" style="font-size: 24px; color: #3b82f6; display: block; margin-bottom: var(--space-1);">&#xe809;</i>
+        <p style="color: var(--text-2); font-size: 12px; margin: 0 0 var(--space-1) 0; text-transform: uppercase; letter-spacing: 0.5px;">Download</p>
+        <p style="color: var(--text-0); font-size: 16px; font-weight: 600; margin: 0;">$(bytes-out-nice)</p>
+      </div>
+    </div>
+  </div>
 
-<!-- Connected Container -->
-<div style="background: linear-gradient(135deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.12) 100%); border: 1.5px solid rgba(255,255,255,0.5); border-radius: var(--radius-sm); padding: var(--space-3); margin-bottom: var(--space-2); box-shadow: 0 12px 30px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.3); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);">
-<table class="table">
-	<tr><td align="right" style="width: 40%;">Connected <i class="icon icon-exchange">&#xf0ec;</i> </td><td>$(uptime)</td></tr>
-</table>
-</div>
+  <!-- Session Info Section -->
+  <div style="margin-bottom: var(--space-3);">
+    <h3 style="color: var(--text-0); font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 var(--space-2) 0; opacity: 0.8;">Session Info</h3>
+    
+    <!-- Connected Time -->
+    <div class="container" style="padding: var(--space-3); margin-bottom: var(--space-2);">
+      <div style="display: flex; align-items: center; justify-content: space-between;">
+        <div style="display: flex; align-items: center; gap: var(--space-2);">
+          <i class="icon icon-exchange" style="font-size: 20px; color: #5b7cfa;">&#xf0ec;</i>
+          <span style="color: var(--text-2); font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px;">Connected</span>
+        </div>
+        <span style="color: var(--text-0); font-size: 14px; font-weight: 600;">$(uptime)</span>
+      </div>
+    </div>
 
-<!-- Bytes Left & Time Left Container -->
-<div style="background: linear-gradient(135deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.12) 100%); border: 1.5px solid rgba(255,255,255,0.5); border-radius: var(--radius-sm); padding: var(--space-3); margin-bottom: var(--space-2); box-shadow: 0 12px 30px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.3); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);">
-<table class="table">
 $(if remain-bytes-total)
-    <tr><td align="right" style="width: 40%;">Bytes Left <i class="icon icon-hourglass-2">&#xf252;</i> </td><td>$(remain-bytes-total-nice)</td></tr>
+    <!-- Bytes Left -->
+    <div class="container" style="padding: var(--space-3); margin-bottom: var(--space-2);">
+      <div style="display: flex; align-items: center; justify-content: space-between;">
+        <div style="display: flex; align-items: center; gap: var(--space-2);">
+          <i class="icon icon-hourglass-2" style="font-size: 20px; color: #f59e0b;">&#xf252;</i>
+          <span style="color: var(--text-2); font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px;">Bytes Left</span>
+        </div>
+        <span style="color: var(--text-0); font-size: 14px; font-weight: 600;">$(remain-bytes-total-nice)</span>
+      </div>
+    </div>
 $(endif)
-$(if session-time-left)
-    <tr><td align="right">Time Left <i class="icon icon-clock">&#xe805;</i> </td><td>$(session-time-left)</td></tr>
-$(endif)
-</table>
-</div>
 
-<!-- Status & Refresh Container -->
-<div style="background: linear-gradient(135deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.12) 100%); border: 1.5px solid rgba(255,255,255,0.5); border-radius: var(--radius-sm); padding: var(--space-3); margin-bottom: var(--space-2); box-shadow: 0 12px 30px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.3); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);">
-<table class="table">
-$(if blocked == 'yes')
-	<tr><td align="right" style="width: 40%;">Status <i class="icon icon-check">&#xe807;</i> </td><td><div style="color: #FF8080">
-<a href="$(link-advert)" target="hotspot_advert">advertisement</a> required</div></td></tr>
-$(elif refresh-timeout)
-	<tr><td align="right" style="width: 40%;">Refresh <i class="icon icon-arrows-cw">&#xe800;</i> </td><td>$(refresh-timeout)</td></tr>
+$(if session-time-left)
+    <!-- Time Left -->
+    <div class="container" style="padding: var(--space-3); margin-bottom: var(--space-2);">
+      <div style="display: flex; align-items: center; justify-content: space-between;">
+        <div style="display: flex; align-items: center; gap: var(--space-2);">
+          <i class="icon icon-clock" style="font-size: 20px; color: #ef4444;">&#xe805;</i>
+          <span style="color: var(--text-2); font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px;">Time Left</span>
+        </div>
+        <span style="color: var(--text-0); font-size: 14px; font-weight: 600;">$(session-time-left)</span>
+      </div>
+    </div>
 $(endif)
-</table>
-</div>
+  </div>
+
+$(if blocked == 'yes')
+  <!-- Status Alert -->
+  <div class="container" style="padding: var(--space-3); margin-bottom: var(--space-3); border-left: 4px solid #FF8080; background: linear-gradient(135deg, rgba(255,128,128,0.15) 0%, rgba(255,128,128,0.05) 100%);">
+    <div style="display: flex; align-items: center; justify-content: space-between;">
+      <div style="display: flex; align-items: center; gap: var(--space-2);">
+        <i class="icon icon-check" style="font-size: 20px; color: #FF8080;">&#xe807;</i>
+        <span style="color: var(--text-2); font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px;">Status</span>
+      </div>
+      <a href="$(link-advert)" target="hotspot_advert" style="color: #FF8080; font-size: 13px; font-weight: 600; text-decoration: none;">advertisement required</a>
+    </div>
+  </div>
+$(elif refresh-timeout)
+  <!-- Refresh Status -->
+  <div class="container" style="padding: var(--space-3); margin-bottom: var(--space-3); border-left: 4px solid #3b82f6;">
+    <div style="display: flex; align-items: center; justify-content: space-between;">
+      <div style="display: flex; align-items: center; gap: var(--space-2);">
+        <i class="icon icon-arrows-cw" style="font-size: 20px; color: #3b82f6;">&#xe800;</i>
+        <span style="color: var(--text-2); font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px;">Refresh</span>
+      </div>
+      <span style="color: var(--text-0); font-size: 14px; font-weight: 600;">$(refresh-timeout)</span>
+    </div>
+  </div>
+$(endif)
 
 $(if login-by-mac != 'yes')
-<!-- Logout Button Container -->
-<div style="margin-top: var(--space-3);">
-<button class="button2" type="submit"><i class="icon icon-logout">&#xe804;</i> Logout</button>
-</div>
+  <!-- Logout Button -->
+  <button class="button2" type="submit" style="width: 100%; margin-top: var(--space-4); height: 52px; font-size: 16px;"><i class="icon icon-logout">&#xe804;</i> Logout</button>
 $(endif)
-</form>
-</div>
+  </form>
+  </div>
 </div>
 <script type="text/javascript">
     //document.getElementById('title').innerHTML = window.location.hostname + " > status";
