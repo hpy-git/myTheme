@@ -383,14 +383,16 @@ myTheme/
 ### Glass Morphism in Action
 
 **Login Page with Glass Effects:**
-![Login Page](screenshot/horizon/horizon_login.png)
+![Login Page](screenshot/liquid-glass/glass-login.png)
+
 - Glass form container with 25px blur
 - Premium glass buttons with 15px blur
 - Glass input fields with focus glow rings
 - Image slider with smooth transitions
 
 **Status Page:**
-![Status Page](screenshot/horizon/horizon_status.png)
+![Status Page](screenshot/liquid-glass/glass-status.png)
+
 - Glass welcome header
 - Session information display
 - Data usage statistics
