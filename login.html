@@ -369,6 +369,21 @@ function handleLoginMethodChange(method) {
     }
   })();
 </script>
+
+<script>
+  (function () {
+    var btn = document.getElementById('wifiRateBtn');
+    var panel = document.getElementById('wifiRatePanel');
+    if (btn && panel) {
+      btn.addEventListener('click', function () {
+        var isHidden = panel.style.display === 'none' || panel.style.display === '';
+        panel.style.display = isHidden ? 'block' : 'none';
+        // Optional visual cue: scroll into view when opened
+        if (isHidden) panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      });
+    }
+  })();
+</script>
 <!-- === Panel Toggle Script (Mutually Exclusive) === -->
 <!--
 <script>
