@@ -95,34 +95,11 @@ $(endif)
                 <div id="userMac" style="font-size: 14px; font-weight: 700; color: var(--accent); word-break: break-all;">$(mac)</div>
               </div>
             </div>
-
-            <!-- Login Status -->
-            <div class="status-card" style="background: linear-gradient(135deg, rgba(16,185,129,0.15) 0%, rgba(16,185,129,0.08) 100%); border: 1.5px solid rgba(16,185,129,0.4); border-radius: 8px; padding: 14px; margin-bottom: 16px;">
-              <div style="font-size: 11px; color: var(--text-2); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; font-weight: 700;">Account Status</div>
-              <div style="display: flex; align-items: center; justify-content: space-between;">
-                <span style="font-weight: 700; color: var(--text-0);">Login Status:</span>
-                <span id="loginStatus" style="font-weight: 700; color: var(--success); padding: 4px 8px; background: rgba(16,185,129,0.2); border-radius: 4px; text-transform: uppercase; font-size: 12px;">$(if user login1)
-Active
-$(else)
-Inactive
-$(endif)</span>
               </div>
             </div>
             <a href="$(link-login)" style="display: block; text-align: center; margin-top: 12px; color: var(--primary); font-weight: 700;">Refresh Network Info</a>
           </div>
         </div>
-        <!-- Login Method Dropdown Container -->
-         <!-- <div class="login-method-container container" style="width:100%; max-width:400px; margin:0 auto;">
-            <label for="loginMethodSelect" class="login-method-label">Select Your Login Method</label>
-            <select id="loginMethodSelect" class="login-method-select" onchange="handleLoginMethodChange(this.value)">
-              <option value="">-- Choose a Method --</option>
-              <option value="voucher">🎫 Voucher</option>
-              <option value="member">👤 Member Account</option>
-              <option value="qr">📱 Scan QR Code</option>
-            </select>
-          </div>
-        -->
-
           <!-- Old Login Method Buttons -->
         <div class="button-row container" style="width:100%; max-width:400px; margin:0 auto;">
           <button id="btnvrc" class="button2" onclick="voucher();"><i class="icon icon-ticket">&#xe802;</i>&nbsp;Voucher</button>
@@ -150,14 +127,9 @@ $(endif)</span>
 <!-- Info & Rates Container -->
         <div class="info-rates-container container" style="width:100%; max-width:500px; margin:0 auto;">
           <div class="button-row" style="margin-top:10px;">
-            <!--<button class="button2 glass-subtle" type="button" id="wifiInfoBtn"><span class="icon"></span> Show Network Details</button>-->
             <button class="button2 glass-subtle" type="button" id="wifiRateBtn"><span class="icon"></span>Show Wifi Rates</button>
           </div>
-          <!-- Network Details Panel -->
-          
-            </div>
-            <a href="$(link-login)" style="display: block; text-align: center; margin-top: 12px; color: var(--primary); font-weight: 700;">Refresh Network Info</a>
-          </div>
+        </div>
           <!-- Wifi Rates Panel -->
           <div id="wifiRatePanel" class="wifi-info card" style="display:none; margin-top:12px;">
             <h3 class="card-title">Promo Rates</h3>
