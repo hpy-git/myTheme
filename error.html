@@ -1,4 +1,4 @@
-<html>
+<html class="theme-dark glass-subtle animations-enhanced shadows-deep">
 	<!--
   Title: myTheme
   Author: HPY
@@ -6,44 +6,69 @@
   Link: https://github.com/hpy-git/myTheme
   -->
 <head>
-<title></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Error</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
-<meta http-equiv="refresh" content="0; url=$(link-redirect)">
-<meta http-equiv="pragma" content="no-cache">
-<meta http-equiv="expires" content="-1">
-<link rel="stylesheet" href="css/horizon.css">
 <style type="text/css">
-
-textarea,input,select {
-	background-color: #FDFBFB;
-	border: 1px #BBBBBB solid;
-	padding: 2px;
-	margin: 1px;
-	font-size: 14px;
-	color: #808080;
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: var(--space-3);
 }
-
-body{ color: #737373; font-size: 12px; font-family: verdana; }
-
-a, a:link, a:visited, a:active { color: #AAAAAA; text-decoration: none; font-size: 12px; }
-a:hover { border-bottom: 1px dotted #c1c1c1; color: #AAAAAA; }
-img {border: none;}
-td { font-size: 12px; color: #7A7A7A; }
-
-
+.error-container {
+  background: linear-gradient(135deg, rgba(255,255,255,0.32) 0%, rgba(255,255,255,0.15) 100%);
+  border: 1.5px solid rgba(255,255,255,0.5);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.3), inset 0 0 60px rgba(255,255,255,0.25), inset 0 1px 0 rgba(255,255,255,0.5);
+  backdrop-filter: blur(25px) saturate(130%);
+  -webkit-backdrop-filter: blur(25px) saturate(130%);
+}
+.error-container h2 {
+  color: var(--text-0);
+  margin: 0 0 var(--space-2) 0;
+  font-size: var(--fs-400);
+}
+.error-container p {
+  color: var(--text-1);
+  margin: var(--space-2) 0;
+  line-height: 1.6;
+}
+.error-link {
+  display: inline-block;
+  margin-top: var(--space-3);
+  padding: 10px 24px;
+  background: linear-gradient(135deg, rgba(91,124,250,0.95) 0%, rgba(75,95,168,0.90) 100%);
+  border: 1.5px solid rgba(255,255,255,0.3);
+  border-radius: var(--radius-lg);
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  box-shadow: 0 15px 40px rgba(91,124,250,0.4), inset 0 1px 0 rgba(255,255,255,0.4);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.error-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 50px rgba(91,124,250,0.5), inset 0 1px 0 rgba(255,255,255,0.5);
+}
 </style>
 </head>
 <body>
-<table width="100%" height="100%">
-
-<tr>
-<td align="center" valign="middle">
-Hotspot ERROR: $(error)<br>
-<br>
-<a href="$(link-login)">CLICK HERE TO CHECK YOUR CONNECTION STATUS</a>
-</td>
-</tr>
-</table>
+<div style="display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: var(--space-3);">
+<div class="error-container">
+  <h2>🔴 Connection Error</h2>
+  <p>$(error)</p>
+  <a href="$(link-login)" class="error-link">Return to Login</a>
+</div>
+</div>
 </body>
 </html>

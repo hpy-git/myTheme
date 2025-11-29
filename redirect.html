@@ -1,6 +1,7 @@
 $(if http-status == 302)Hotspot redirect$(endif)
 $(if http-header == "Location")$(link-redirect)$(endif)
-<html>
+<!DOCTYPE html>
+<html class="theme-dark" lang="en">
     <!--
   Title: myTheme
   Author: HPY
@@ -8,11 +9,12 @@ $(if http-header == "Location")$(link-redirect)$(endif)
   Link: https://github.com/hpy-git/myTheme
   -->
 <head>
-<title>...</title>
+<title>Redirecting...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="refresh" content="0; url=$(link-redirect)">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
-<meta http-equiv="pragma" content="no-cache">
-<meta http-equiv="expires" content="-1">
+<link rel="stylesheet" href="css/horizon.css">
 </head>
 <body>
 </body>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="theme-dark glass-subtle animations-enhanced shadows-deep">
 	<!--
   Title: myTheme
   Author: HPY
@@ -9,11 +9,11 @@
 <head>
 <title id="title"></title>
 <meta http-equiv="refresh" content="2; url=$(link-redirect)">
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<link rel="icon" type="image/x-icon" href="favicon.ico">
-<meta name="theme-color" content="#1FA2FF" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#5b7cfa" />
 <meta http-equiv="Cache-Control" content="no-cache">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="stylesheet" href="css/horizon.css">
 <script language="JavaScript">
 
@@ -27,15 +27,15 @@
 </script>
 </head>
 <body onLoad="startClock()">
-<div class="main">  
-<table width="100%" height="100%">
-<tr>
-	<td align="center" valign="middle">
-	You are connected
-	<br><br>
-	If not, <a style="color:#000" href="./login">Click here</a></td>
-</tr>
-</table>
+<div class="main">
+  <div class="container" style="max-width: 400px; text-align: center;">
+    <h2 style="color: var(--text-0); margin: 0 0 var(--space-2) 0;">✅ Connection Successful</h2>
+    <p style="color: var(--text-1); margin: var(--space-2) 0; font-size: var(--fs-300);">You are now connected to the network</p>
+    <p style="color: var(--text-2); margin: var(--space-2) 0;">Redirecting in a few seconds...</p>
+    <div style="margin-top: var(--space-4);">
+      <a href="./login" class="button" style="text-decoration: none; display: block;">Return to Login</a>
+    </div>
+  </div>
 </div>
 <script type="text/javascript">
 	//document.getElementById('title').innerHTML = window.location.hostname + " > redirect";

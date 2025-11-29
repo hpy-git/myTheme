@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="theme-dark glass-subtle animations-enhanced shadows-deep">
   <!--
   Title: myTheme
   Author: HPY
@@ -11,12 +11,12 @@
 $(if refresh-timeout)
 <meta http-equiv="refresh" content="$(refresh-timeout-secs)">
 $(endif)
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<meta name="theme-color" content="#1FA2FF" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#5b7cfa" />
 <meta http-equiv="Cache-Control" content="no-cache">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
-<link rel="stylesheet" href="css/horizon.css" type="text/css">
+<link rel="stylesheet" href="css/horizon.css">
 <script language="javaScript">
 
 $(if advert-pending == 'yes')
@@ -40,16 +40,17 @@ $(endif)
 </head>
 <body $(if advert-pending == 'yes')	onLoad="openAdvert()" $(endif) >
 <div class="main">
+  <div class="container" style="max-width: 600px; margin: 0 auto;">
   $(if login-by == 'trial')
-	<div style="margin-top:20px; text-align: center; color:#fff;"><h3>Welcome</h3><i style="font-size:50px;" class="icon icon-user-circle-o">&#xf2be;</i> <h3>Trial User</h3></div><br>
+	<div style="margin-top: var(--space-4); text-align: center;"><h3 style="color: var(--text-0);">Welcome</h3><i style="font-size: 48px;" class="icon icon-user-circle-o">&#xf2be;</i> <h3 style="color: var(--text-0);">Trial User</h3></div><br>
 $(elif login-by != 'mac')
-	<div style="margin-top:20px; text-align: center; color:#fff;"><h3>Welcome</h3><i style="font-size:50px;" class="icon icon-user-circle-o">&#xf2be;</i> <h3 id="user">$(username)</h3></div><br>
+	<div style="margin-top: var(--space-4); text-align: center;"><h3 style="color: var(--text-0);">Welcome</h3><i style="font-size: 48px;" class="icon icon-user-circle-o">&#xf2be;</i> <h3 id="user" style="color: var(--text-0);">$(username)</h3></div><br>
 $(endif)
-<div class="container">
+<div style="background: linear-gradient(135deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.12) 100%); border: 1.5px solid rgba(255,255,255,0.5); border-radius: var(--radius-sm); padding: var(--space-3); box-shadow: 0 12px 30px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.3); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);">
 <form action="$(link-logout)" name="logout" onSubmit="return openLogout()">
 
 
-<table class="table2">
+<table class="table">
 	<tr><td align="right" style="width: 40%;">IP Address <i class="icon icon-sitemap">&#xf0e8;</i> </td><td>$(ip)</td></tr>
     <tr><td align="right">MAC Address <i class="icon icon-barcode">&#xe80a;</i> </td><td>$(mac)</td></tr>
     <tr><td align="right">Upload <i class="icon icon-upload">&#xe808;</i> </td><td>$(bytes-in-nice)</td></tr>
@@ -76,9 +77,10 @@ $(if login-by-mac != 'yes')
 <button onclick="document.location='http://$(hostname)/user?subs='; return false;">status</button>
 end of user manager link -->
 
-<button class="button2" type="submit"><i class="icon icon-logout">&#xe804;</i> Logout</button>
+<button class="button2" type="submit" style="margin-top: var(--space-3);"><i class="icon icon-logout">&#xe804;</i> Logout</button>
 $(endif)
 </form>
+</div>
 </div>
 </div>
 <script type="text/javascript">

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="theme-dark glass-subtle animations-enhanced shadows-deep">
 	<!--
   Title: myTheme
   Author: HPY
@@ -8,9 +8,9 @@
   -->
 <head>
 <title id="title"></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<meta name="theme-color" content="#1FA2FF" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#5b7cfa" />
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="stylesheet" href="css/horizon.css">
 $(if refresh-timeout)
@@ -23,14 +23,14 @@ $(endif)
 </head>
 <body>
 <div class="main">
-<div class="container">
+<div class="container" style="max-width: 450px;">
 $(if login-by == 'trial')
-		<div style="margin-top:20px; text-align: center;"><h3>Welcome</h3><i style="font-size:150px;" class="icon icon-user-circle-o">&#xf2be;</i> <h3>Trial User</h3></div><br>
+		<div style="margin-top: var(--space-4); text-align: center;"><h3 style="color: var(--text-0);">Welcome</h3><i style="font-size: 80px;" class="icon icon-user-circle-o">&#xf2be;</i> <h3 style="color: var(--text-0);">Trial User</h3></div><br>
 	$(elif login-by != 'mac')
-		<div style="margin-top:20px; text-align: center;"><h3>Welcome</h3><i style="font-size:150px;" class="icon icon-user-circle-o">&#xf2be;</i><br> <h3 id="user">$(username)</h3></div><br>
+		<div style="margin-top: var(--space-4); text-align: center;"><h3 style="color: var(--text-0);">Welcome</h3><i style="font-size: 80px;" class="icon icon-user-circle-o">&#xf2be;</i><br> <h3 id="user" style="color: var(--text-0);">$(username)</h3></div><br>
 $(endif)
-<h3>You are connected to the network <br /><b id="dname"></b></h3>
-<button class="button" onclick="window.location='./status'"><i class="icon icon-check">&#xe807;</i> Check Status</buton>
+<h3 style="color: var(--text-0); text-align: center; margin: var(--space-3) 0;">✅ You are connected to the network <br /><b id="dname" style="color: var(--primary);"></b></h3>
+<button class="button" onclick="window.location='./status'" style="margin-top: var(--space-3);"><i class="icon icon-check">&#xe807;</i> Check Status</button>
 </div>
 </div>
 <script type="text/javascript">
