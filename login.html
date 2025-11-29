@@ -209,6 +209,72 @@ $(endif)</span>
         </div>
       </div>
     </div>
+  </div>
+<!-- Login Toggles -->
+  <script type="text/javascript">
+
+var titleElement = document.getElementById('title');
+    if (titleElement) {
+ titleElement.innerHTML = "$(hostname) &gt; login";
+    }
+
+//document.login.username.focus();
+
+var infologin = document.getElementById('infologin');
+infologin.innerHTML = "Choose your preferred login method";
+
+// login page 2 
+var username = document.login.username;
+var password = document.login.password;
+
+username.placeholder = "Voucher Code";
+
+// set password = username
+function setpass() {
+    var user = username.value
+    //user = user.toLowerCase();
+    username.value = user;
+    password.value = user;
+}
+
+username.onkeyup = setpass;
+
+// change to voucher mode
+function voucher() {
+    //username.focus();
+    username.onkeyup = setpass;
+    username.placeholder = "Your voucher code here";
+    password.type = "hidden";
+    infologin.innerHTML = "Enter Voucher Code";
+}
+
+// change to member mode
+function member() {
+    //username.focus();
+    username.onkeyup = "";
+    username.placeholder = "Enter User ID";
+    password.type = "password";
+    password.placeholder = "Enter User Password";
+    infologin.innerHTML = "Enter Username & Password";
+}
+
+// Handle login method dropdown selection
+function handleLoginMethodChange(method) {
+    var loginFormContainer = document.getElementById('loginFormContainer');
+    if (method === 'voucher') {
+        if (loginFormContainer) loginFormContainer.style.display = 'block';
+        voucher();
+    } else if (method === 'member') {
+        if (loginFormContainer) loginFormContainer.style.display = 'block';
+        member();
+    } else if (method === 'qr') {
+        window.location = 'https://laksa19.github.io/myqr';
+    } else {
+        if (loginFormContainer) loginFormContainer.style.display = 'none';
+    }
+}
+
+</script>
 
 <!-- Audio Files-->
 <audio id="clickSound" src="audio/sfx/pop-reverb-423718.mp3" preload="auto" style="display: none;"></audio>
@@ -279,70 +345,6 @@ $(endif)</span>
   }
 </script>
 
-<script type="text/javascript">
-
-var titleElement = document.getElementById('title');
-    if (titleElement) {
- titleElement.innerHTML = "$(hostname) &gt; login";
-    }
-
-//document.login.username.focus();
-
-var infologin = document.getElementById('infologin');
-infologin.innerHTML = "Choose your preferred login method";
-
-// login page 2 
-var username = document.login.username;
-var password = document.login.password;
-
-username.placeholder = "Voucher Code";
-
-// set password = username
-function setpass() {
-    var user = username.value
-    //user = user.toLowerCase();
-    username.value = user;
-    password.value = user;
-}
-
-username.onkeyup = setpass;
-
-// change to voucher mode
-function voucher() {
-    //username.focus();
-    username.onkeyup = setpass;
-    username.placeholder = "Your voucher code here";
-    password.type = "hidden";
-    infologin.innerHTML = "Enter Voucher Code";
-}
-
-// change to member mode
-function member() {
-    //username.focus();
-    username.onkeyup = "";
-    username.placeholder = "Enter User ID";
-    password.type = "password";
-    password.placeholder = "Enter User Password";
-    infologin.innerHTML = "Enter Username & Password";
-}
-
-// Handle login method dropdown selection
-function handleLoginMethodChange(method) {
-    var loginFormContainer = document.getElementById('loginFormContainer');
-    if (method === 'voucher') {
-        if (loginFormContainer) loginFormContainer.style.display = 'block';
-        voucher();
-    } else if (method === 'member') {
-        if (loginFormContainer) loginFormContainer.style.display = 'block';
-        member();
-    } else if (method === 'qr') {
-        window.location = 'https://laksa19.github.io/myqr';
-    } else {
-        if (loginFormContainer) loginFormContainer.style.display = 'none';
-    }
-}
-
-</script>
 <!-- === Panel Toggle Script (Mutually Exclusive) === -->
 <script>
   // Mutually Exclusive Panel Toggle
@@ -371,7 +373,6 @@ function handleLoginMethodChange(method) {
     }
   })();
 </script>
-  </div>
 </body>
 
 </html>
