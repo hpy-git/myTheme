@@ -129,6 +129,21 @@
   --surface-veil: rgba(0,0,0,0.05);
 }
 
+:root.theme-corporate {
+  --primary: #0066cc;
+  --accent: #0099ff;
+  --danger: #cc0000;
+}
+
+:root.theme-forest {
+  --primary: #2d6a4f;
+  --accent: #52b788;
+  --bg-0: #051b15;
+  --gradient-hero: radial-gradient(1400px 700px at 15% -5%, rgba(45,106,79,0.2), transparent 55%),
+                   radial-gradient(1000px 600px at 85% 110%, rgba(82,183,136,0.15), transparent 65%),
+                   linear-gradient(135deg, #051b15 0%, #1b4332 50%, #051b15 100%);
+}
+
 /* ===== Utility Blur Classes (from glass-theme.css) ===== */
 .glass-blur-sm { backdrop-filter: blur(4px); }
 .glass-blur-md { backdrop-filter: blur(10px); }
