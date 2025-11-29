@@ -71,17 +71,45 @@ $(endif)
           </div>
           <!-- Network Details Panel -->
           <div id="wifiInfoPanel" class="wifi-info card" style="display:none; margin-top:12px;">
-            <h3 class="card-title">Information & Terms</h3>
-            <div class="notice">
-              <ul style="text-align: left;">
-                <li>This network is being managed by <strong>Cloud Connect Systems</strong>.</li>
-                <li>You are <strong>not allowed</strong> to use our network for illegal, malicious, and other activities that's punishable by law.</li>
-                <li>You are connecting to a network with strict set of rules and filters for network security.</li>
+            <h3 class="card-title">Network Details</h3>
+            
+            <!-- User Connection Info -->
+            <div class="network-info-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px;">
+              <!-- User IP Address -->
+              <div class="info-card" style="background: rgba(91,124,250,0.1); border: 1px solid rgba(91,124,250,0.3); border-radius: 8px; padding: 12px; text-align: center;">
+                <div style="font-size: 11px; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;">IP Address</div>
+                <div id="userIp" style="font-size: 14px; font-weight: 600; color: #1a2a4a; word-break: break-all;">$(ip)</div>
+              </div>
+              <!-- User MAC Address -->
+              <div class="info-card" style="background: rgba(139,92,246,0.1); border: 1px solid rgba(139,92,246,0.3); border-radius: 8px; padding: 12px; text-align: center;">
+                <div style="font-size: 11px; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;">MAC Address</div>
+                <div id="userMac" style="font-size: 14px; font-weight: 600; color: #1a2a4a; word-break: break-all;">$(mac)</div>
+              </div>
+            </div>
+
+            <!-- Login Status -->
+            <div class="status-card" style="background: linear-gradient(135deg, rgba(16,185,129,0.15) 0%, rgba(16,185,129,0.08) 100%); border: 1.5px solid rgba(16,185,129,0.4); border-radius: 8px; padding: 14px; margin-bottom: 16px;">
+              <div style="font-size: 11px; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">Account Status</div>
+              <div style="display: flex; align-items: center; justify-content: space-between;">
+                <span style="font-weight: 600; color: #1a2a4a;">Login Status:</span>
+                <span id="loginStatus" style="font-weight: 700; color: #10b981; padding: 4px 8px; background: rgba(16,185,129,0.2); border-radius: 4px; text-transform: uppercase; font-size: 12px;">$(if user login1)
+Active
+$(else)
+Inactive
+$(endif)</span>
+              </div>
+            </div>
+
+            <!-- Terms & Conditions -->
+            <div class="notice" style="background: linear-gradient(135deg, rgba(245,158,11,0.18) 0%, rgba(245,158,11,0.08) 100%); border-left: 3px solid #f59e0b;">
+              <ul style="text-align: left; margin: 0; padding-left: 20px;">
+                <li style="margin-bottom: 6px;">This network is being managed by <strong>Cloud Connect Systems</strong>.</li>
+                <li style="margin-bottom: 6px;">You are <strong>not allowed</strong> to use our network for illegal, malicious, and other activities that's punishable by law.</li>
+                <li style="margin-bottom: 6px;">You are connecting to a network with strict set of rules and filters for network security.</li>
                 <li>By connecting to our network <strong>you agree to our short terms and description</strong> you read above.</li>
               </ul>
-              Menu Selection: Voucher, Member or Scan QR
             </div>
-            <a href="$(link-login)">Refresh Login Page</a>
+            <a href="$(link-login)" style="display: block; text-align: center; margin-top: 12px;">Refresh Network Info</a>
           </div>
           <!-- Wifi Rates Panel -->
           <div id="wifiRatePanel" class="wifi-info card" style="display:none; margin-top:12px;">
