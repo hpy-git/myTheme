@@ -293,29 +293,30 @@ function member() {
 }
 
 </script>
-<!-- === NEW: Inline JS to toggle the panel === -->
+<!-- === Panel Toggle Script (Mutually Exclusive) === -->
 <script>
-  // Toggle WiFi Info Panel
+  // Mutually Exclusive Panel Toggle
   (function () {
-    var btn = document.getElementById('wifiInfoBtn');
-    var panel = document.getElementById('wifiInfoPanel');
-    if (btn && panel) {
-      btn.addEventListener('click', function () {
-        var isHidden = panel.style.display === 'none' || panel.style.display === '';
-        panel.style.display = isHidden ? 'block' : 'none';
-        if (isHidden) panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    var infoBtn = document.getElementById('wifiInfoBtn');
+    var rateBtn = document.getElementById('wifiRateBtn');
+    var infoPanel = document.getElementById('wifiInfoPanel');
+    var ratePanel = document.getElementById('wifiRatePanel');
+    
+    if (infoBtn && rateBtn && infoPanel && ratePanel) {
+      // Toggle Network Details Panel
+      infoBtn.addEventListener('click', function () {
+        var isInfoHidden = infoPanel.style.display === 'none' || infoPanel.style.display === '';
+        infoPanel.style.display = isInfoHidden ? 'block' : 'none';
+        ratePanel.style.display = 'none'; // Hide Wifi Rates when showing Network Details
+        if (isInfoHidden) infoPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       });
-    }
-  })();
-  // Toggle WiFi Rate Panel
-  (function () {
-    var btn = document.getElementById('wifiRateBtn');
-    var panel = document.getElementById('wifiRatePanel');
-    if (btn && panel) {
-      btn.addEventListener('click', function () {
-        var isHidden = panel.style.display === 'none' || panel.style.display === '';
-        panel.style.display = isHidden ? 'block' : 'none';
-        if (isHidden) panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      
+      // Toggle Wifi Rates Panel
+      rateBtn.addEventListener('click', function () {
+        var isRateHidden = ratePanel.style.display === 'none' || ratePanel.style.display === '';
+        ratePanel.style.display = isRateHidden ? 'block' : 'none';
+        infoPanel.style.display = 'none'; // Hide Network Details when showing Wifi Rates
+        if (isRateHidden) ratePanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       });
     }
   })();
