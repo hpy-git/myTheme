@@ -1,0 +1,254 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Hotspot Login</title>
+<style>
+  :root{
+    --bg:#0f172a; --card:#111827; --muted:#9ca3af; --text:#e5e7eb; --accent:#22c55e; --accent2:#38bdf8;
+    --border:#1f2937;
+  }
+  *{box-sizing:border-box}
+  body{margin:0; font-family:system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+       background:linear-gradient(135deg,#0f172a 0%,#111827 100%); color:var(--text); min-height:100vh; display:flex; align-items:center; justify-content:center; padding:24px;}
+  .card{width:100%; max-width:640px; background:var(--card); border:1px solid var(--border); border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,.35); overflow:hidden}
+  header{padding:22px 24px; border-bottom:1px solid var(--border); display:flex; align-items:center; gap:12px}
+  header .title{font-weight:700; font-size:20px}
+  header .sub{color:var(--muted); font-size:12px}
+  .content{padding:24px}
+  .row{display:flex; gap:16px; flex-wrap:wrap}
+  .row > .col{flex:1 1 280px}
+  label{display:block; font-weight:600; margin-bottom:6px}
+  select, input[type=text], input[type=password]{width:100%; padding:12px; border-radius:10px; border:1px solid var(--border); background:#0b1220; color:var(--text)}
+  .btn{display:inline-flex; align-items:center; gap:8px; padding:12px 16px; border-radius:10px; border:1px solid var(--border); cursor:pointer; text-decoration:none; color:var(--text)}
+  .btn-primary{background:var(--accent); border-color:#16a34a; color:#072b17; font-weight:700}
+  .btn-outline{background:#0b1220}
+  .grid{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+  .muted{color:var(--muted)}
+  .section{margin-top:18px; padding:16px; border:1px dashed var(--border); border-radius:12px; display:none}
+  .section.show{display:block}
+  .table{width:100%; border-collapse:collapse; margin-top:10px; font-size:14px}
+  .table th, .table td{border:1px solid var(--border); padding:8px; text-align:left}
+  .footer{padding:16px 24px; border-top:1px solid var(--border); display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:space-between}
+  a.link{color:var(--accent2); text-decoration:none}
+  .error{background:#3f1d1d; border:1px solid #7f1d1d; color:#fecaca; padding:12px; border-radius:10px; margin-bottom:12px}
+</style>
+</head>
+
+<body>
+<div class="card">
+  <header>
+    <div class="title">Select Your Login Method</div>
+    <div class="sub">Voucher • Member Account • QR Code</div>
+  </header>
+
+  <div class="content">
+    <!-- Error Banner -->
+    $(if error)
+      <div class="error">$(error)</div>
+    $(endif)
+
+    <!-- Login Method Selector -->
+    <div class="row">
+      <div class="col">
+        <label for="loginMethod">Login method</label>
+        <select id="loginMethod" aria-label="Login method">
+          <option value="" selected>— Choose a Method —</option>
+          <option value="voucher">🎫 Voucher</option>
+          <option value="member">👤 Member Account</option>
+          <option value="qr">📱 Scan QR Code</option>
+        </select>
+      </div>
+      <div class="col" style="align-self:flex-end;">
+        <button class="btn btn-outline" id="btnShowNetwork">Show Network Details</button>
+        <button class="btn btn-outline" id="btnShowRates">Show Wifi Rates</button>
+      </div>
+    </div>
+
+    <!-- Login Forms -->
+    <form id="loginForm" method="post" action="$(link-login-only)" onsubmit="return doLogin();" class type="hidden" name="popup" value="true" />
+      <!-- CHAP fields populated by JS when available -->
+      <div id="voucherFields" class="section">
+        <label for="voucherCode">Voucher code</label>
+        <input type="text" id="voucherCode" name="username" placeholder="Enter voucher code" autocomplete="username" />
+        <!-- No password for voucher logins; MikroTik uses username-only vouchers -->
+      </div>
+
+      <div id="memberFields" class="section">
+        <label for="memberUser">Username</label>
+        <input type="text" id="memberUser" name="username" placeholder="Enter username" autocomplete="username" />
+        <label for="memberPass" style="margin-top:10px;">Password</label>
+        <input type="password" id="memberPass" name="password" placeholder="Enter password" autocomplete="current-password" />
+      </div>
+
+      <div id="qrFields" class="section">
+        <label for="qrCode">QR code value</label>
+        <input type="text" id="qrCode" name="username" placeholder="Paste scanned QR value" />
+        <p class="muted" style="margin-top:6px;">Tip: Use your device camera to scan; the code should resolve to your voucher/user token.</p>
+      </div>
+
+      <div class="row" style="margin-top:14px;">
+        <button type="submit" class="btn btn-primary">🔌 Connect</button>
+        $(if trial == 'yes')
+          <a class="btn btn-outline" href="$(link-login-only)?dst=$(linkry 15 minutes Free</a>
+        $(endif)
+      </div>
+    </form>
+
+    <!-- Network Details -->
+    <div id="networkDetails" class="section" aria-label="Network details">
+      <h3>Network Details</h3>
+      <div class="grid">
+        <div>
+          <div class="muted">IP Address</div>
+          <div><strong>$(ip)</strong></div>
+        </div>
+        <div>
+          <div class="muted">MAC Address</div>
+          <div><strong>$(mac)</strong></div>
+        </div>
+        <div>
+          <div class="muted">Account Status</div>
+          <div>Login Status: $(if user login1) <strong>Active</strong> $(else) <strong>Inactive</strong> $(endif)</div>
+        </div>
+      </div>
+      <div style="margin-top:10px;">
+        <a class="btn btn-outlineork Info</a>
+      </div>
+    </div>
+
+    <!-- Wifi Rates -->
+    <div id="wifiRates" class="section" aria-label="Wifi rates">
+      <h3>Promo Rates</h3>
+      <table class="table">
+        <tr><th>Plan</th><th>Speed</th><th>Validity</th><th>Price</th></tr>
+        <tr><td>Daily Pass</td><td>Up to 5 Mbps</td><td>1 Day</td><td>₱10</td></tr>
+        <tr><td>Weekly Pass</td><td>Up to 5 Mbps</td><td>7 Days</td><td>₱50</td></tr>
+        <tr><td>Combo Pass</td><td>Up to 5 Mbps</td><td>14 Days</td><td>₱140</td></tr>
+        <tr><td>Monthly Pass</td><td>Up to 10 Mbps</td><td>30 Days</td><td>₱250</td></tr>
+        <tr><td>Lakad Matatag Pass</td><td>Up to 15 Mbps</td><td>60 Days / 90 Days</td><td>₱500 / ₱700</td></tr>
+      </table>
+      <div style="margin-top:10px;">
+        <div>How to Purchase a Voucher:</div>
+        <ul>
+          <li>Call or text: +63 962 660 6116</li>
+          <li>Pay using GCash #: 09604431990 and receive the voucher on the number used for payment.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
+      <a class="btn btn-outlinen Page</a>
+      $(link-login)Cloud Hotspot Portal</a>
+    </div>
+    <div class="muted">Copyright © 2023 – 2025. All rights reserved. <a class="link" hrefpy-git/HPY™</a></div>
+  </div>
+</div>
+
+<!-- Minimal CHAP support: uses MikroTik-provided md5.js if present -->
+<script>
+(function(){
+  const sel = document.getElementById('loginMethod');
+  const form = document.getElementById('loginForm');
+  const voucher = document.getElementById('voucherFields');
+  const member = document.getElementById('memberFields');
+  const qr = document.getElementById('qrFields');
+
+  const net = document.getElementById('networkDetails');
+  const rates = document.getElementById('wifiRates');
+  const btnNet = document.getElementById('btnShowNetwork');
+  const btnRates = document.getElementById('btnShowRates');
+
+  function show(el){ el.classList.add('show'); }
+  function hide(el){ el.classList.remove('show'); }
+
+  sel.addEventListener('change', () => {
+    hide(voucher); hide(member); hide(qr);
+    if(!sel.value){ hide(form); return; }
+    show(form);
+    if(sel.value === 'voucher'){ show(voucher); }
+    if(sel.value === 'member'){ show(member); }
+    if(sel.value === 'qr'){ show(qr); }
+  });
+
+  btnNet.addEventListener('click', (e)=>{ e.preventDefault(); net.classList.toggle('show'); });
+  btnRates.addEventListener('click', (e)=>{ e.preventDefault(); rates.classList.toggle('show'); });
+
+  // Preselect based on session (optional)
+  // If router populates $(username), we show member fields by default.
+  // (This avoids empty UI if captive portal reloads.)
+  const hasUser = '$(username)'.trim() !== '';
+  if(hasUser){ sel.value='member'; show(form); show(member); }
+
+  // Expose doLogin for onsubmit
+  window.doLogin = function(){
+    // Determine which credential set to use
+    const method = sel.value;
+
+    // Basic validation
+    if(method === ''){
+      alert('Please select a login method.'); return false;
+    }
+    let user = '', pass = '';
+    if(method === 'voucher'){
+      user = document.getElementById('voucherCode').value.trim();
+      pass = ''; // voucher mode uses username only
+    }else if(method === 'member'){
+      user = document.getElementById('memberUser').value.trim();
+      pass = document.getElementById('memberPass').value;
+    }else if(method === 'qr'){
+      user = document.getElementById('qrCode').value.trim();
+      pass = ''; // QR resolves to a token/username
+    }
+    if(!user){ alert('Please enter your credentials.'); return false; }
+
+    // CHAP support if chap-id provided
+    const chapId = '$(chap-id)';
+    const chapChallenge = '$(chap-challenge)';
+    if(chapId && chapChallenge && typeof hexMD5 === 'function'){
+      // Build CHAP response: md5(chap-id + password + chap-challenge)
+      const challenge = chapId + pass + chapChallenge;
+      const response = hexMD5(challenge);
+      // For CHAP, MikroTik expects 'username' and 'password' to be sent where password is MD5 response
+      // We will temporarily create hidden fields and post them.
+      const tmpU = document.createElement('input');
+      tmpU.type='hidden'; tmpU.name='username'; tmpU.value=user;
+      const tmpP = document.createElement('input');
+      tmpP.type='hidden'; tmpP.name='password'; tmpP.value=response;
+      form.appendChild(tmpU); form.appendChild(tmpP);
+      return true; // submit
+    }else{
+      // No CHAP: ensure fields exist as plain
+      // If visible inputs do not carry the right pair (e.g., voucher/qr only have username),
+      // add/adjust hidden password field to empty so RouterOS accepts.
+      let hasUserInput = form.querySelector('input[name="username"]');
+      let hasPassInput = form.querySelector('input[name="password"]');
+
+      if(!hasUserInput){
+        const u = document.createElement('input');
+        u.type='hidden'; u.name='username'; u.value=user; form.appendChild(u);
+      }else{
+        hasUserInput.value = user;
+      }
+
+      if(!hasPassInput){
+        const p = document.createElement('input');
+        p.type='hidden'; p.name='password'; p.value=pass; form.appendChild(p);
+      }else{
+        hasPassInput.value = pass;
+      }
+      return true; // submit
+    }
+  };
+})();
+</script>
+
+<!-- If your router serves md5.js, it will define hexMD5().
+     If not, you can optionally include a minimal MD5 inline or leave CHAP fallback to plain. -->
+<script</script>
+</body>
+</html>
