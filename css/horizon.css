@@ -1014,14 +1014,56 @@ select option:checked,
   color: var(--text-2);
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
   font-weight: 700;
+  text-align: center;
 }
 
 /* Login method dropdown container */
-.login-method-wrapper {
-  margin-top: var(--space-3);
-  margin-bottom: var(--space-3);
+.login-method-container {
+  background: linear-gradient(135deg, 
+    rgba(255,255,255,0.32) 0%, 
+    rgba(255,255,255,0.15) 100%);
+  border: 1.5px solid var(--border-glass);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  box-shadow: 
+    var(--shadow-1),
+    inset 0 0 40px rgba(255,255,255,0.15),
+    inset 0 1px 0 rgba(255,255,255,0.4);
+  backdrop-filter: blur(20px) saturate(120%);
+  -webkit-backdrop-filter: blur(20px) saturate(120%);
+  animation: glass-enter 500ms cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Glass container shine effect */
+.login-method-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Hover effect for dropdown container */
+.login-method-container:hover {
+  box-shadow: 
+    0 20px 50px rgba(0,0,0,0.2),
+    inset 0 0 50px rgba(255,255,255,0.18),
+    inset 0 1px 0 rgba(255,255,255,0.5);
+  transform: translateY(-2px);
+}
+
+/* Select wrapper within container */
+.login-method-container select {
+  width: 100%;
 }
 
 /* Responsive adjustments for dropdown */
@@ -1033,5 +1075,15 @@ select option:checked,
     padding-right: 36px;
     font-size: var(--fs-200);
     border-radius: var(--radius-sm);
+  }
+  
+  .login-method-container {
+    padding: var(--space-3);
+    border-radius: var(--radius-sm);
+  }
+  
+  .login-method-label {
+    font-size: var(--fs-100);
+    margin-bottom: 10px;
   }
 }
