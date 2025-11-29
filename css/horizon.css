@@ -92,6 +92,16 @@
   --tahoe-gradient-2: radial-gradient(ellipse 1600px 800px at 20% 0%, rgba(91,124,250,0.25) 0%, rgba(91,124,250,0.1) 40%, transparent 70%);
   --tahoe-gradient-3: radial-gradient(ellipse 1200px 800px at 80% 100%, rgba(139,92,246,0.2) 0%, rgba(139,92,246,0.05) 40%, transparent 70%);
   --tahoe-gradient-4: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.1) 0%, transparent 50%);
+
+  /* Animated liquid-glass background layers */
+  --liquid-layer-1: radial-gradient(700px 420px at 10% 15%, rgba(91,124,250,0.16), transparent 30%);
+  --liquid-layer-2: radial-gradient(900px 520px at 85% 85%, rgba(139,92,246,0.12), transparent 28%);
+  --liquid-layer-3: radial-gradient(1200px 700px at 50% 50%, rgba(255,255,255,0.04), transparent 35%);
+  --liquid-overlay: linear-gradient(120deg, rgba(255,255,255,0.03), rgba(255,255,255,0.008));
+  --liquid-opacity: 0.95;
+  --liquid-speed-1: 18s;
+  --liquid-speed-2: 26s;
+  --liquid-tilt-speed: 32s;
 }
 
 /* Layout sanity: make widths include padding/border */
@@ -170,6 +180,50 @@ body::before {
   background-size: 100% 100%, 200% 200%, 150% 150%, cover, cover;
   z-index: 0;
   animation: subtle-shift 20s ease-in-out infinite;
+}
+
+/* New animated layer for liquid glass motion */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0; /* sits above background gradients but behind content (.main has z-index:1) */
+  opacity: var(--liquid-opacity);
+  background-image:
+    var(--liquid-layer-1),
+    var(--liquid-layer-2),
+    var(--liquid-layer-3),
+    var(--liquid-overlay);
+  background-repeat: no-repeat, no-repeat, no-repeat, repeat;
+  background-position: 5% 10%, 95% 90%, 50% 50%, 0 0;
+  background-size: 1200px 700px, 1400px 800px, 1800px 1000px, cover;
+  mix-blend-mode: screen;
+  filter: blur(18px) saturate(120%);
+  transform: translateZ(0);
+  animation:
+    liquid-drift var(--liquid-speed-1) linear infinite alternate,
+    liquid-swell var(--liquid-speed-2) ease-in-out infinite alternate,
+    liquid-tilt var(--liquid-tilt-speed) linear infinite;
+}
+
+/* Slightly different, slower movement for a soft, organic feel */
+@keyframes liquid-drift {
+  0%   { background-position: 0% 5%, 100% 95%, 50% 50%, 0 0; }
+  100% { background-position: 10% 20%, 90% 80%, 52% 48%, 0 0; }
+}
+
+@keyframes liquid-swell {
+  0%   { transform: scale(1) translateY(0); filter: blur(16px) saturate(110%); }
+  50%  { transform: scale(1.03) translateY(-6px); filter: blur(20px) saturate(125%); }
+  100% { transform: scale(1) translateY(0); filter: blur(16px) saturate(110%); }
+}
+
+/* gentle slow rotation/tilt to add parallax */
+@keyframes liquid-tilt {
+  0%   { transform: rotate(-0.25deg); }
+  50%  { transform: rotate(0.25deg); }
+  100% { transform: rotate(-0.25deg); }
 }
 
 /* Subtle animation for atmospheric effect */
@@ -667,6 +721,11 @@ a:hover .icon {
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
+  }
+
+  body::after {
+    animation: none;
+    filter: blur(14px) saturate(110%);
   }
 }
 
