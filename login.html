@@ -12,6 +12,7 @@
 	  <meta http-equiv="Cache-Control" content="no-cache">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="css/horizon.css" type="text/css">
+    <link rel="stylesheet" href="css/CUSTOMIZATION.css" type="text/css">
     <link rel="stylesheet" href="css/glass-theme.css" type="text/css?v=1">
 
     <link rel="stylesheet" href="css/blink.css">
@@ -85,21 +86,7 @@ $(endif)
   <!-- Optional: quick link back to login -->
   <a href="$(link-login)">Refresh Login Page</a>
 </div>
-<!-- === NEW: Inline JS to toggle the panel === -->
-<script>
-  (function () {
-    var btn = document.getElementById('wifiInfoBtn');
-    var panel = document.getElementById('wifiInfoPanel');
-    if (btn && panel) {
-      btn.addEventListener('click', function () {
-        var isHidden = panel.style.display === 'none' || panel.style.display === '';
-        panel.style.display = isHidden ? 'block' : 'none';
-        // Optional visual cue: scroll into view when opened
-        if (isHidden) panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      });
-    }
-  })();
-</script><br/>
+<br/>
                 <button id="btnvrc" class="small-button" onclick="voucher();"><i class="icon icon-ticket">&#xe802;</i>Voucher</button>
                 <button id="btnmem" class="small-button" onclick="member();"><i class="icon icon-user-circle-o">&#xf2be;</i>Member</button>
                 <button id="qr" class="small-button" onclick="window.location='https://laksa19.github.io/myqr';"> <i class="icon icon-qrcode">&#xe801;</i>QR</button>
@@ -318,6 +305,21 @@ function member() {
     infologin.innerHTML = "Enter Username & Password";
 }
 
+</script>
+<!-- === NEW: Inline JS to toggle the panel === -->
+<script>
+  (function () {
+    var btn = document.getElementById('wifiInfoBtn');
+    var panel = document.getElementById('wifiInfoPanel');
+    if (btn && panel) {
+      btn.addEventListener('click', function () {
+        var isHidden = panel.style.display === 'none' || panel.style.display === '';
+        panel.style.display = isHidden ? 'block' : 'none';
+        // Optional visual cue: scroll into view when opened
+        if (isHidden) panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      });
+    }
+  })();
 </script>
 </body>
 
