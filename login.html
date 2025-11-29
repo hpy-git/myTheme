@@ -90,7 +90,7 @@ $(endif)
           <form autocomplete="off" name="login" action="$(link-login-only)" method="post" $(if chap-id) onSubmit="return doLogin()" $(endif) class="login-form">
             <input type="hidden" name="dst" value="$(link-status)" />
             <input type="hidden" name="popup" value="true" />
-            <input class="username" name="username" type="text" value="$(username)"/>
+            <input class="username" name="username" type="text" value="$(username)" type="hidden"/>
             <input class="password" name="password" placeholder="Password" type="hidden" />
             $(if error)<div class="notice">$(error)</div>$(endif)
             <button class="button glass-subtle" type="submit"><i class="icon icon-login">&#xe803;</i>  Connect</button>
@@ -210,7 +210,7 @@ infologin.innerHTML = "Choose your preferred login method";
 var username = document.login.username;
 var password = document.login.password;
 
-//username.placeholder = "Voucher Code";
+username.placeholder = "";
 
 // set password = username
 function setpass() {
