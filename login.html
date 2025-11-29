@@ -80,8 +80,7 @@ $(endif)
         <div class="info-rates-container container" style="width:100%; max-width:500px; margin:0 auto;">
         <!-- Network Details Panel -->
           <div id="wifiInfoPanel" class="wifi-info card" style="margin-top:12px;">
-            <h3 class="card-title">Network Details</h3>
-            
+            <h3 class="card-title">Device Details</h3>
             <!-- User Connection Info -->
             <div class="network-info-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px;">
               <!-- User IP Address -->
@@ -96,8 +95,6 @@ $(endif)
               </div>
             </div>
               </div>
-            </div>
-          </div>
         </div>
           <!-- Old Login Method Buttons -->
         <div class="button-row container" style="width:100%; max-width:400px; margin:0 auto;">
@@ -105,10 +102,9 @@ $(endif)
           <button id="btnmem" class="button2" onclick="member();"><i class="icon icon-user-circle-o">&#xf2be;</i>&nbsp;Member</button>
       <!--<button id="qr" class="small-button" onclick="window.location='https://laksa19.github.io/myqr';"> <i class="icon icon-qrcode">&#xe801;</i>&nbsp;Scan QR</button>-->
         </div>
-        <br/>
         <!-- Login Form Container -->
         <div class="login-container container" id="loginFormContainer" style="width:100%; max-width:400px; margin:0 auto;">
-          <div class="blinking" id="infologin"></div>
+          <div class="blinking" id="infologin" style="text-align: center;"></div>
           <form autocomplete="off" name="login" action="$(link-login-only)" method="post" $(if chap-id) onSubmit="return doLogin()" $(endif) class="login-form">
             <input type="hidden" name="dst" value="$(link-status)" />
             <input type="hidden" name="popup" value="true" />
