@@ -836,13 +836,11 @@ a:hover .icon {
     0 4px 12px rgba(0,0,0,0.08);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-
 /* Panel constraints */
 .container {
   max-width: 100%;
   overflow: hidden;
 }
-
 /* Make tables scroll horizontally on small devices */
 .container .table,
 .container table {
@@ -850,14 +848,12 @@ a:hover .icon {
   width: 100%;
   overflow-x: auto;
 }
-
 /* ===== NEW: Reduce Glass Blur (More Transparent) =====
    Apply .glass-subtle to an ancestor (html/body/container wrapper)
    to make glass effects less frosted and more transparent. */
 .glass-subtle {
   --blur-value: blur(8px); /* smaller blur = more transparent */
 }
-
 /* When an ancestor has .glass-subtle, reduce blur on main glass elements */
 .glass-subtle .container,
 .glass-subtle .wifi-info.card,
@@ -870,7 +866,6 @@ a:hover .icon {
   backdrop-filter: var(--blur-value) saturate(100%);
   -webkit-backdrop-filter: var(--blur-value) saturate(100%);
 }
-
 /* Optional: slightly reduce inner inset glows and shadow intensity */
 .glass-subtle .container {
   box-shadow: 
@@ -880,7 +875,6 @@ a:hover .icon {
 .glass-subtle .wifi-info.card {
   box-shadow: var(--shadow-2), inset 0 1px 0 rgba(255,255,255,0.18);
 }
-
 /*
    Enhanced Animations
    ===================
@@ -889,19 +883,15 @@ a:hover .icon {
 .animations-enhanced .container {
   animation: glass-enter 800ms cubic-bezier(0.16, 1, 0.3, 1);
 }
-
 .animations-enhanced .button:hover {
   animation: button-bounce 0.6s ease;
 }
-
 @keyframes button-bounce {
   0% { transform: translateY(0); }
   50% { transform: translateY(-4px); }
   100% { transform: translateY(-3px); }  
 }
-
 /* ===== RESPONSIVE ADJUSTMENTS ===== */
-
 /* Mobile Optimizations */
 @media (max-width: 480px) {
   :root {
@@ -910,7 +900,6 @@ a:hover .icon {
     --fs-300: 15px;
   }
 }
-
 /* Tablet Optimizations */
 @media (min-width: 768px) and (max-width: 1024px) {
   :root {
@@ -918,7 +907,6 @@ a:hover .icon {
     --fs-500: 36px;
   }
 }
-
 /* Desktop Enhancements */
 @media (min-width: 1025px) {
   :root {
