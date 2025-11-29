@@ -106,7 +106,7 @@ $(endif)
             <input class="username" name="username" type="text" value="$(username)"/>
             <input class="password" name="password" placeholder="Password" type="hidden" />
             $(if error)<div class="notice">$(error)</div>$(endif)
-            <button class="button" type="submit"><i class="icon icon-login">&#xe803;</i>  Connect</button>
+            <button class="button glass-subtle" type="submit"><i class="icon icon-login">&#xe803;</i>  Connect</button>
           </form>
           
           $(if trial == 'yes')
@@ -117,8 +117,8 @@ $(endif)
 <!-- Info & Rates Container -->
         <div class="info-rates-container container" style="width:100%; max-width:500px; margin:0 auto;">
           <div class="button-row" style="margin-top:10px;">
-            <button class="small-button" type="button" id="wifiInfoBtn"><span class="icon"></span> Show Network Details</button>
-            <button class="small-button" type="button" id="wifiRateBtn"><span class="icon"></span>Show Wifi Rates</button>
+            <button class="button2 glass-subtle" type="button" id="wifiInfoBtn"><span class="icon"></span> Show Network Details</button>
+            <button class="button2 glass-subtle" type="button" id="wifiRateBtn"><span class="icon"></span>Show Wifi Rates</button>
           </div>
           <!-- Network Details Panel -->
           <div id="wifiInfoPanel" class="wifi-info card" style="display:none; margin-top:12px;">
